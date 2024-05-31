@@ -6,6 +6,13 @@ const AddChannels = ({ selectedChannels, allChannels, onToggleChannel }) => {
   const unselectedChannels = allChannels.filter(channel => !selectedChannels.some(selected => selected.id === channel.id));
   const numVisibleAdditionalChannels = Math.max(14 - selectedChannels.length, 0); 
 
+  const handleToggleChannel = (channel) => {
+    // Check if the number of selected channels is less than 4 before toggling
+    if (selectedChannels.length < 4 || selectedChannels.includes(channel)) {
+      onToggleChannel(channel);
+    }
+  };
+
   return (
     <>
     <div className='whole-section'>
@@ -21,7 +28,7 @@ const AddChannels = ({ selectedChannels, allChannels, onToggleChannel }) => {
               <input
                 type="checkbox"
                 checked={true}
-                onChange={() => onToggleChannel(channel)}
+                onChange={() => handleToggleChannel(channel)}
               />
               <img className="selected-name" src={channel.logo} alt={channel.name} />
               <img className="selected-poster" src={channel.featured_show.poster} alt={channel.featured_show.title} />
@@ -41,7 +48,7 @@ const AddChannels = ({ selectedChannels, allChannels, onToggleChannel }) => {
             <input
               type="checkbox"
               checked={false}
-              onChange={() => onToggleChannel(channel)}
+              onChange={() => handleToggleChannel(channel)}
             />
             <img className="additional-logo" src={channel.logo} alt={channel.name} />
             <img className="additional-poster" src={channel.featured_show.poster} alt={channel.featured_show.title} />
