@@ -15,8 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<ThemePackList />} />
           <Route path="/theme-packs" element={<ThemePackList />} />
-          <Route path="/add-channels" element={<AddChannels />} />
-          <Route path="/premiums" element={<Premiums />} />
+          {/* <Route path="/add-channels" element={<AddChannels />} />
+          <Route path="/premiums" element={<Premiums />} /> */}
           <Route path="/test-data" element={<TestData />} />
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
