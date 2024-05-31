@@ -6,7 +6,7 @@ export default function ThemePack({
     selectedThemePack,
     setSelectedThemePack,
 }) {
-    const [selectedShow, setSelectedShow] = useState(null);
+    const [selectedShows, setSelectedShows] = useState([]);
 
     return (
         <>
@@ -14,15 +14,15 @@ export default function ThemePack({
             {themePack.id === selectedThemePack ? (
                 <div
                     className="themePack themePack--active"
-                    onClick={() => setSelectedThemePack(themePack.name)}
+                    onClick={() => setSelectedThemePack(themePack.id)}
                 >
-                    <div className="themePack__top-container themePack__top-container">
-                        <h3 className="top-container__heading">
-                            {themePack.name}
-                        </h3>
-                        <label className="top-container__label">
-                            {themePack.label}
-                        </label>
+                    <div className="themePack__top-container">
+                        <h1 className="top-container__heading">
+                            {themePack.themepack_name}
+                        </h1>
+                        <p className="top-container__label">
+                            {themePack.subheader}
+                        </p>
                     </div>
                     <div className="themePack__card-container">
                         {themePack.channels.map((obj) => {
@@ -46,6 +46,11 @@ export default function ThemePack({
                     </div>
                     <div className="themePack__bottom-container">
                         <h3 className="bottom-container__price">{`$${themePack.monthly_cost}/mo.`}</h3>
+                        <div className="bottom-container__buttons">
+                            <button className="buttons__cancel-button">Cancel</button>
+                            {/*onClick, add selectedShows to shopping cart; update price in footer */}
+                            <button className="buttons__confirm-button">Confirm</button>
+                        </div>
                     </div>
                 </div>
             ) : (
@@ -57,9 +62,9 @@ export default function ThemePack({
                         <h2 className="top-container__heading">
                             {themePack.themepack_name}
                         </h2>
-                        <label className="top-container__label">
+                        <p className="top-container__label">
                             {themePack.subheader}
-                        </label>
+                        </p>
                     </div>
 
                     <div className="themePack__bottom-container">

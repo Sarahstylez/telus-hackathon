@@ -14,7 +14,9 @@ export default function ThemePackList() {
     return (
         <>
             <div className="ThemePackList">
-                <h3 className="ThemePackList___heading">Most popular theme packs</h3>
+                <div className="ThemePackList__heading-wrapper">
+                    <h3 className="heading-wrapper__heading">Most popular theme packs</h3>
+                </div>
 
                 {console.log("theme packs ", themePacks)}
 
