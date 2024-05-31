@@ -1,5 +1,5 @@
-@use '../../partials/colors' as colors;
-@use '../../partials/fonts' as fonts;
+@use "../../partials/colors" as colors;
+@use "../../partials/fonts" as fonts;
 
 .themePack {
     display: flex;
@@ -12,7 +12,7 @@
     &--active {
         border: 1px solid colors.$telus-green;
     }
-    
+
     &__top-container {
         display: flex;
         flex-direction: row;
@@ -31,7 +31,6 @@
     &__bottom-container {
         width: 1040px;
     }
-
 }
 
 .top-container {
@@ -45,7 +44,6 @@
 }
 
 .card-container {
-
     &__card {
         object-fit: cover;
         height: 400px;
@@ -55,15 +53,11 @@
         display: grid;
         grid-template-areas: "pile";
         place-items: start end;
-
     }
-
 }
 
 .card {
-
     &__checkbox {
-        
         right: 0;
         margin-right: 20px;
         grid-area: pile;
@@ -75,10 +69,15 @@
         z-index: 1;
         grid-area: pile;
     }
+    &__logo {
+        z-index: 2;
+        grid-area: pile;
+        margin: auto;
+        margin-bottom: 25%;
+    }
 }
 
 .bottom-container {
-
     &__price {
         @extend .H1;
     }
