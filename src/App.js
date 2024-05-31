@@ -34,15 +34,6 @@ function App() {
     //   setSelectedChannels(selectedChannels);
     // };
 
-  const handleToggleChannel = (channel) => {
-    if (selectedChannels.some((selected) => selected.id === channel.id)) {
-      setSelectedChannels(
-        selectedChannels.filter((selected) => selected.id !== channel.id)
-      );
-    } else if (selectedChannels.length < 4) {
-      setSelectedChannels([...selectedChannels, channel]);
-    }
-  };
     const selectedThemePackData = themePacksData.find(
         (pack) => pack.id === selectedThemePackId
     );
