@@ -32,12 +32,14 @@
     justify-content: space-between;
     width: 1040px;
     gap: $padding-xxs;
+    
   }
 
   &__bottom-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     width: 1040px;
     margin-top: $padding-m;
   }
@@ -47,18 +49,19 @@
   &__card {
     object-fit: cover;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 14px;
     display: grid;
     grid-template-areas: "pile";
     place-items: start end;
-    
+
     &--selected {
-      border: 2px solid $color-telus-green;
+      outline: 2px solid $color-telus-green;
     }
   }
 }
 
 .card {
+  
   &__checkbox {
     right: 0;
     margin-right: $padding-xs;
@@ -83,6 +86,32 @@
 
 }
 
+.bottom-container{
+
+  &__price {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    gap: $padding-m;
+  }
+}
+
+.price {
+  &__amount {
+    font-size: 48px;
+  }
+
+  &__month {
+    font-size: 16px;
+    text-transform: lowercase;
+  }
+}
+
 .buttons {
   &__cancel-button {
     border: none;
@@ -91,11 +120,6 @@
     text-decoration: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: $padding-xxxs;
-    // padding-left: $padding-xxl;
-    // padding-right: $padding-xxl;
-    padding-right: $padding-s;
-    padding-top: $padding-xs;
-    padding-bottom: $padding-xs;
     border-radius: 12px;
   }
 

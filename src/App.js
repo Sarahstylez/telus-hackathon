@@ -23,7 +23,7 @@ function App() {
     const [shoppingCart, setShoppingCart] = useState([]);
     const [token, setToken] = useState(0);
     let cost = 80;
-    useEffect(() => {}, [shoppingCart, token]);
+    useEffect(() => { }, [shoppingCart, token]);
     // const [selectedPremium, setSelectedPremium] = useState(null);
 
     const allChannels = themePacksData.reduce((acc, pack) => {
@@ -75,7 +75,7 @@ function App() {
                                 setShoppingCart={setShoppingCart}
                                 token={token}
                                 setToken={setToken}
-                                // onConfirm={handleConfirm}
+                            // onConfirm={handleConfirm}
                             />
                         }
                     />
@@ -86,9 +86,9 @@ function App() {
                         path="/checkout"
                         element={
                             <Checkout
-                                selectedThemePack={selectedThemePackData}
+                                shoppingCart={shoppingCart}
                                 selectedChannels={selectedChannels}
-                                // selectedPremium={selectedPremium}
+                            // selectedPremium={selectedPremium}
                             />
                         }
                     />
