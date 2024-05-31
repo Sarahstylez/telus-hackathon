@@ -56,8 +56,11 @@ export default function ThemePack({
             setShoppingCart([...shoppingCart, themePack]);
             setToken(++token);
 
-        } else {
+        } else if (checkBoxes.length < 3 && checkBoxes.length > 0) {
             alert(`Please select at least 3 channels for ${themePack.themepack_name} theme pack`);
+        } else {
+            // remove themepack from shoppingcart
+            setShoppingCart(shoppingCart.filter((item) => item.id !== themePack.id));
         }
 
     }
