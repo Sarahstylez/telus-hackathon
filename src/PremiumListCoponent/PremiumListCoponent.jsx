@@ -2,8 +2,11 @@ import netflix from "./Assets/netflix-logo.svg";
 import disneyPlus from "./Assets/disney-plus-logo.svg";
 import appleTV from "./Assets/apple-tv-logo.svg";
 import "./PremiumListCoponent.scss";
+import { useState } from 'react';
 
 function PremiumListCoponent(){
+
+    const [selectedPremium, setSelectedPremium] = useState(null);
 
 const showCard = (elementID) => {
     document.getElementById(elementID).style.display = "inline";
