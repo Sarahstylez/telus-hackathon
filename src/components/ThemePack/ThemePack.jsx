@@ -1,5 +1,4 @@
 import "./ThemePack.scss";
-import { useState } from "react";
 
 export default function ThemePack({
     themePack,

@@ -4,8 +4,8 @@ import data from '../../data/themepacks-and-channel-data.json';
 import { useState, useEffect } from 'react';
 
 
-
 export default function ThemePackList() {
+    const themePacks = data;
 
     const [selectedThemePack, setSelectedThemePack] = useState("100");
     const [selectedChannels, setSelectedChannels] = useState([]);
@@ -13,15 +13,21 @@ export default function ThemePackList() {
     const [token, setToken] = useState(0);
 
 
+    function sumMonthlyCost() {
+        let sum = 0;
+        shoppingCart.map(themePackObj =>  sum += parseInt(themePackObj.monthly_cost));
+        return sum;
+    }
+
     useEffect(() => {
-
+    
     }, [shoppingCart, token])
-    const themePacks = data;
 
+    
     return (
         <>
             {`shopping cart: ${shoppingCart.length}`}<br />
-            {`shopping cart price: ${shoppingCart}`}
+            {`shopping cart price: ${sumMonthlyCost()}`}<br />
             {`tokens: ${token}`}
             <div className="ThemePackList">
                 <div className="ThemePackList__heading-wrapper">
