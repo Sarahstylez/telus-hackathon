@@ -1,7 +1,8 @@
 import "./Checkout.scss";
 import { useNavigate } from "react-router-dom";
 
-function Checkout({ shoppingCart, selectedChannels, selectedPremium, totalMonthlyCost }) {
+
+function Checkout({ shoppingCart, selectedChannels, premiumShoppingCart, totalMonthlyCost }) {
   const navigate = useNavigate();
 
   const handleEditThemePacks = () => {
@@ -36,7 +37,9 @@ function Checkout({ shoppingCart, selectedChannels, selectedPremium, totalMonthl
           </div>
           <div className="checkout__card-header">
             <h1 className="checkout__card-title">
-              {selectedPremium ? selectedPremium.name : "No Premium Selected"}
+              {premiumShoppingCart && premiumShoppingCart.length > 0 ? `${premiumShoppingCart.length} Premium`
+              : 
+              "No Premium Selected"}
             </h1>
             <h4
               className="checkout__card-edit-cta"

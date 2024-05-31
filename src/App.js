@@ -24,6 +24,7 @@ function App() {
     const [shoppingCart, setShoppingCart] = useState([]);
     const [token, setToken] = useState(0);
     const [totalMonthlyCost, setTotalMonthlyCost] = useState(0);
+    const [premiumShoppingCart, setPremiumShoppingCart] = useState([]);
     let cost = 80;
     useEffect(() => { 
         setTotalMonthlyCost(sumMonthlyCost() + cost);
@@ -65,11 +66,6 @@ function App() {
             <div className="App">
                 <Header />
                 <Navigation />
-                {`shopping cart: ${shoppingCart.length}`}
-                <br />
-                {`shopping cart price: ${sumMonthlyCost()}`}
-                <br />
-                {`tokens: ${token}`}
                 <Routes>
                     <Route
                         path="/theme-packs"
@@ -98,6 +94,7 @@ function App() {
                                 shoppingCart={shoppingCart}
                                 selectedChannels={selectedChannels}
                                 totalMonthlyCost={totalMonthlyCost}
+                                premiumShoppingCart={premiumShoppingCart}
                             // selectedPremium={selectedPremium}
                             />
                         }
@@ -112,7 +109,7 @@ function App() {
                             />
                         }
                     />
-                    <Route path="/premiums" element={<PremiumListCoponent />} />
+                    <Route path="/premiums" element={<PremiumListCoponent premiumShoppingCart={premiumShoppingCart} setPremiumShoppingCart={setPremiumShoppingCart}/>} />
                     {/* <Route
                         path="/premiums"
                         element={
