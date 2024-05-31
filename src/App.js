@@ -14,7 +14,7 @@ import AddChannels from "./components/AddChannels/AddChannels.jsx";
 import Navigation from "./components/Navigation/Navigation.jsx";
 import Checkout from "./pages/CheckoutPage/Checkout.jsx";
 // import Premiums from "./components/Premiums/Premiums.jsx";
-import PremiumListCoponent from './components/PremiumListCoponent/PremiumListCoponent';
+import PremiumListCoponent from "./components/PremiumListCoponent/PremiumListCoponent";
 
 function App() {
     const themePacks = themePacksData;
@@ -24,7 +24,8 @@ function App() {
     const [shoppingCart, setShoppingCart] = useState([]);
     const [token, setToken] = useState(0);
     let cost = 80;
-    useEffect(() => { }, [shoppingCart, token]);
+    let themePackSubtotal = 0;
+    useEffect(() => {}, [shoppingCart, token]);
     // const [selectedPremium, setSelectedPremium] = useState(null);
 
     const allChannels = themePacksData.reduce((acc, pack) => {
@@ -32,13 +33,17 @@ function App() {
     }, []);
 
     const handleToggleChannel = (channel) => {
-      if (selectedChannels.some(selected => selected.id === channel.id)) {
-        setSelectedChannels(selectedChannels.filter(selected => selected.id !== channel.id));
-      } else {
-        setSelectedChannels([...selectedChannels, channel]);
-      }
+        if (selectedChannels.some((selected) => selected.id === channel.id)) {
+            setSelectedChannels(
+                selectedChannels.filter(
+                    (selected) => selected.id !== channel.id
+                )
+            );
+        } else {
+            setSelectedChannels([...selectedChannels, channel]);
+        }
     };
-  
+
     const selectedThemePackData = themePacksData.find(
         (pack) => pack.id === selectedThemePackId
     );
@@ -49,6 +54,7 @@ function App() {
             (themePackObj) => (sum += parseInt(themePackObj.monthly_cost))
         );
         cost += sum;
+        themePackSubtotal = sum;
         return sum;
     }
 
@@ -76,7 +82,7 @@ function App() {
                                 setShoppingCart={setShoppingCart}
                                 token={token}
                                 setToken={setToken}
-                            // onConfirm={handleConfirm}
+                                // onConfirm={handleConfirm}
                             />
                         }
                     />
@@ -89,7 +95,9 @@ function App() {
                             <Checkout
                                 shoppingCart={shoppingCart}
                                 selectedChannels={selectedChannels}
-                            // selectedPremium={selectedPremium}
+                                cost={cost}
+                                themePackSubtotal={themePackSubtotal}
+                                // selectedPremium={selectedPremium}
                             />
                         }
                     />
@@ -99,11 +107,11 @@ function App() {
                             <AddChannels
                                 selectedChannels={selectedChannels}
                                 allChannels={allChannels}
-                                onToggleChannel={handleToggleChannel} 
+                                onToggleChannel={handleToggleChannel}
                             />
                         }
                     />
-                    <Route path="/premiums" element={<PremiumListCoponent/>} />
+                    <Route path="/premiums" element={<PremiumListCoponent />} />
                     {/* <Route
                         path="/premiums"
                         element={
