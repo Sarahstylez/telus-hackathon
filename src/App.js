@@ -1,10 +1,12 @@
-
 import './App.scss';
 import ThemePackList from './components/ThemePackList/ThemePackList.jsx';
 import TestData from "./data/TestData";
 import themePacksData from './data/themepacks-and-channel-data.json';
 import AddChannels from './components/AddChannels/AddChannels.jsx';
 import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
+import Header from './header/header.js';
+import Navigation from './components/Navigation/Navigation.jsx';
 
 function App() {
   const [selectedThemePack, setSelectedThemePack] = useState("100");
