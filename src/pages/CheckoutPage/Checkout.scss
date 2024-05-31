@@ -1,0 +1,52 @@
+@use "../../styles/partials/__variables" as *;
+@use "../../styles/partials/__mixins" as *;
+@use "../../styles/partials/__utils" as *;
+
+.checkout {
+  background-color: $color-bg-grey;
+  width: 100%;
+  height: 100%;
+  &__container {
+    @include flex();
+    flex-direction: column;
+    margin: $padding-xl 0;
+  }
+  &__title {
+    @include flex(start, start);
+    width: 1160px;
+    padding: $padding-xxl 0 $padding-sm 0;
+  }
+  &__card {
+    border-radius: 0.6875rem;
+    box-shadow: 0px 0px 67px 0px rgba(0, 0, 0, 0.11);
+    width: 1032px;
+    height: 2075px;
+    background-color: $color-primary-white;
+    padding: 0 $padding-xxl;
+    &-header {
+      @include flex(center, space-between);
+      border-bottom: 1px solid $color-telus-grey;
+      padding: $padding-xxl 0;
+    }
+    &-title {
+      color: $color-telus-purple;
+    }
+    &-edit-cta {
+      text-decoration-line: underline;
+    }
+  }
+  &__total {
+    @include flex(start, right);
+    padding: $padding-xxl 0;
+    &-container {
+      flex-direction: column;
+    }
+    &-title {
+      width: 10rem;
+    }
+    &-cost {
+      width: 10rem;
+      text-align: right;
+    }
+  }
+}
