@@ -41,7 +41,7 @@ export default function ThemePack({
                         })}
                     </div>
                     <div className="themePack__bottom-container">
-                        <h3 className="bottom-container__price">$9/mo.</h3>
+                        <h3 className="bottom-container__price">{`$${themePack.monthly_cost}/mo.`}</h3>
                     </div>
                 </div>
             ) : (
