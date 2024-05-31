@@ -1,5 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import "./Footer.scss";
+
 function Footer(props) {
+    const navigate = useNavigate();
+    function toCheckout() {
+        navigate("/checkout");
+    }
     return (
         <>
             <div className="footer">
@@ -9,7 +15,7 @@ function Footer(props) {
                         <h6>$80/mo.</h6>
                         <h6 className="footer__discount">$80/mo.</h6>
                     </div>
-                    <button className="footer__button">
+                    <button className="footer__button" onClick={toCheckout}>
                         Check Availability
                     </button>
                 </section>
