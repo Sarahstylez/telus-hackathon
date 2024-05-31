@@ -7,10 +7,12 @@
     width: 100vw;
     background-color: white;
     bottom: 0;
+    padding: 1rem 0;
 
     &__container {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
     }
 
     &__button {
@@ -25,8 +27,13 @@
         display: flex;
         flex-direction: row;
         align-items: baseline;
+        & * {
+            margin-right: 1rem;
+        }
     }
-    &__strikethrough {
+    &__discount {
         text-decoration: line-through;
+        color: $color-telus-dark-grey;
+        font-size: 1.5rem;
     }
 }

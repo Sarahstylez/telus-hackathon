@@ -7,9 +7,11 @@ function Footer(props) {
                     <div className="footer__info">
                         <h2>Bundle total</h2>
                         <h6>$80/mo.</h6>
-                        <h6 className="footer__strikethrough">$80/mo.</h6>
+                        <h6 className="footer__discount">$80/mo.</h6>
                     </div>
-                    <button className="footer__button">Continue</button>
+                    <button className="footer__button">
+                        Check Availability
+                    </button>
                 </section>
             </div>
         </>
