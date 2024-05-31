@@ -63,84 +63,90 @@ export default function ThemePack({
     }
 
 
-return (
-    <>
-        {console.log(themePack.monthly_cost)}
-        {themePack.id === selectedThemePack ? (
-            <div
-                className="themePack themePack--active"
-                onClick={() => setSelectedThemePack(themePack.id)}
-            >
-                <div className="themePack__top-container">
-                    <h1 className="top-container__heading">
-                        {themePack.themepack_name}
-                    </h1>
-                    <p className="top-container__label">{themePack.subheader}</p>
-                </div>
-                <div className="themePack__card-container">
-                    {themePack.channels.map((obj) => {
-                        return (
-                            <div className="card-container__card">
-                                {selectedChannels.find((channel) => channel.id === obj.id) ? (
-                                    <input
-                                        className="card__checkbox card__checkbox--checked"
-                                        type="checkbox"
-                                        onClick={(e) => toggleClick(e, obj)}
-                                        checked
-                                    />
-                                ) : (
-                                    <input
-                                        className="card__checkbox"
-                                        type="checkbox"
-                                        onClick={(e) => toggleClick(e, obj)}
-                                    />
-                                )}
+    return (
+        <>
+            {console.log(themePack.monthly_cost)}
+            {themePack.id === selectedThemePack ? (
+                <div
+                    className="themePack themePack--active"
+                    onClick={() => setSelectedThemePack(themePack.id)}
+                >
+                    <div className="themePack__top-container">
+                        <h2 className="top-container__heading">
+                            {themePack.themepack_name}
+                        </h2>
+                        <p className="top-container__label">{themePack.subheader}</p>
+                    </div>
+                    <div className="themePack__card-container">
+                        {themePack.channels.map((obj) => {
+                            return (
+                                <div className="card-container__card">
+                                    {selectedChannels.find((channel) => channel.id === obj.id) ? (
+                                        <input
+                                            className="card__checkbox card__checkbox--checked"
+                                            type="checkbox"
+                                            onClick={(e) => toggleClick(e, obj)}
+                                            checked
+                                        />
+                                    ) : (
+                                        <input
+                                            className="card__checkbox"
+                                            type="checkbox"
+                                            onClick={(e) => toggleClick(e, obj)}
+                                        />
+                                    )}
 
-                                <img
-                                    className="card__img"
-                                    src={obj.featured_show.poster}
-                                    alt="featured show poster"
-                                />
-                                <img
-                                    className="card__logo"
-                                    src={obj.logo}
-                                    alt="channel logo"
-                                />
-                            </div>
-                        );
-                    })}
-                </div>
-                <div className="themePack__bottom-container">
-                    <h3 className="bottom-container__price">{`$${themePack.monthly_cost}/mo.`}</h3>
-                    <div className="bottom-container__buttons">
-                        <button className="buttons__cancel-button">Cancel</button>
-                        {/*onClick, add selectedShows to shopping cart; update price in footer */}
-                        <button
-                            className="buttons__confirm-button"
-                            onClick={onClickConfirm}
-                        >
-                            Confirm
-                        </button>
+                                    <img
+                                        className="card__img"
+                                        src={obj.featured_show.poster}
+                                        alt="featured show poster"
+                                    />
+                                    <img
+                                        className="card__logo"
+                                        src={obj.logo}
+                                        alt="channel logo"
+                                    />
+                                </div>
+                            );
+                        })}
+                    </div>
+                    <div className="themePack__bottom-container">
+                        <div className="bottom-container__price">
+                            <h6 className="price__amount">{`$${themePack.monthly_cost}`}</h6>
+                            <h6 className="price__month">/mo.</h6>
+                        </div>
+                        <div className="bottom-container__buttons">
+                            <button className="buttons__cancel-button">Cancel</button>
+                            {/*onClick, add selectedShows to shopping cart; update price in footer */}
+                            <button
+                                className="buttons__confirm-button"
+                                onClick={onClickConfirm}
+                            >
+                                Confirm
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        ) : (
-            <div
-                className="themePack"
-                onClick={() => setSelectedThemePack(themePack.id)}
-            >
-                <div className="themePack__top-container">
-                    <h2 className="top-container__heading">
-                        {themePack.themepack_name}
-                    </h2>
-                    <p className="top-container__label">{themePack.subheader}</p>
-                </div>
+            ) : (
+                <div
+                    className="themePack"
+                    onClick={() => setSelectedThemePack(themePack.id)}
+                >
+                    <div className="themePack__top-container">
+                        <h2 className="top-container__heading">
+                            {themePack.themepack_name}
+                        </h2>
+                        <p className="top-container__label">{themePack.subheader}</p>
+                    </div>
 
-                <div className="themePack__bottom-container">
-                    <h3 className="bottom-container__price">{`$${themePack.monthly_cost}/mo.`}</h3>
+                    <div className="themePack__bottom-container">
+                     <div className="bottom-container__price">
+                            <h6 className="price__amount">{`$${themePack.monthly_cost}`}</h6>
+                            <h6 className="price__month">/mo.</h6>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        )}
-    </>
-);
+            )}
+        </>
+    );
 }
