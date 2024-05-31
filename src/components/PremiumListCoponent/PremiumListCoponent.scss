@@ -1,0 +1,43 @@
+@use "../../styles/partials/__variables" as *;
+@use "../../styles/partials/__mixins" as *;
+@use "../../styles/partials/__utils" as *;
+
+li{
+    list-style: none;
+}
+
+.premium{
+    width: 1160px;
+
+    &--option{
+        border: $color-telus-green solid 1px;
+        padding: 50px;
+        border-radius: 12px;
+    }
+    &--subheading-logo-container{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 3%;
+    }
+    &--button-container{
+        display: flex;
+        width: 30%;
+        justify-content: space-around;
+    }
+    &--cancel-button{
+        background-color: transparent;
+        border: none;
+        color: $color-telus-black;
+    }
+    &--confirm-button{
+        background-color: $color-telus-green;
+        border: none;
+        width: 150px;
+        height: 60px;
+    }
+    &--bottom-container{
+        display: flex;
+        justify-content: space-between;
+    }
+
+}

@@ -1,0 +1,124 @@
+/* -------------------------------------------------------------------------- */
+/*                              Responsive Styles                             */
+/* -------------------------------------------------------------------------- */
+
+$desktop-width: 1280px;
+$max-site-width: 1440px;
+
+/* -------------------------------------------------------------------------- */
+/*                                Color Styles                                */
+/* -------------------------------------------------------------------------- */
+
+$color-telus-grey: #d8d8d8;
+$color-telus-dark-grey: #a7a8ac;
+$color-telus-black: #333437;
+$color-telus-green: #2b8000;
+$color-telus-purple: #4b286d;
+$color-primary-white: #fff; // Global white color
+
+/* -------------------------------------------------------------------------- */
+/*                           Background Color Styles                          */
+/* -------------------------------------------------------------------------- */
+
+$color-bg-grey: #f6f6f6;
+
+/* -------------------------------------------------------------------------- */
+/*                               Padding Styles                               */
+/* -------------------------------------------------------------------------- */
+
+$padding-xxxl: 80px;
+$padding-xxl: 64px;
+$padding-xl: 56px;
+$padding-l: 48px;
+$padding-m: 40px;
+$padding-sm: 32px;
+$padding-s: 24px;
+$padding-xs: 16px;
+$padding-xxs: 8px;
+$padding-xxxs: 4px;
+
+/* -------------------------------------------------------------------------- */
+/*                                 Font Families                              */
+/* -------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Helvetica Neue Medium";
+  src: url("../../assets/fonts/HelveticaNeueMedium.otf");
+}
+
+@font-face {
+  font-family: "Helvetica Neue Regular";
+  src: url("../../assets/fonts/HelveticaNeueNormal.otf");
+}
+
+@font-face {
+  font-family: "Helvetica Neue Light";
+  src: url("../../assets/fonts/HelveticaNeueLight.otf");
+}
+
+/* -------------------------------------------------------------------------- */
+/*                        Desktop & Tablet Text Styles                        */
+/* -------------------------------------------------------------------------- */
+
+$dt-page-header: (
+  // h1
+  font-size: 34px,
+  line-height: 40px,
+  font-family: "Helvetica Neue Regular",
+  text-transform: capitalize,
+  color: $color-telus-black
+);
+
+$dt-subheader: (
+  //h2
+  font-size: 30px,
+  line-height: 32px,
+  font-family: "Helvetica Neue Medium",
+  text-transform: capitalize,
+  color: $color-telus-black
+);
+
+$dt-title: (
+  //h3
+  font-size: 24px,
+  line-height: 29px,
+  font-family: "Helvetica Neue Regular",
+  text-transform: capitalize,
+  letter-spacing: 1px,
+  color: $color-telus-black
+);
+
+$dt-subtitle: (
+  //h4
+  font-size: 20px,
+  line-height: 24px,
+  font-family: "Helvetica Neue Regular",
+  text-transform: capitalize,
+  color: $color-telus-black
+);
+
+$dt-buttons: (
+  //h5
+  font-size: 30px,
+  line-height: 37px,
+  font-family: "Helvetica Neue Medium",
+  text-transform: capitalize,
+  color: $color-primary-white
+);
+
+$dt-cta: (
+  //h6
+  font-size: 30px,
+  line-height: 36px,
+  font-family: "Helvetica Neue Light",
+  text-transform: capitalize,
+  color: $color-telus-black
+);
+
+$dt-body: (
+  //p
+  font-size: 16px,
+  line-height: 19px,
+  font-family: "Helvetica Neue Regular",
+  color: $color-telus-black
+);

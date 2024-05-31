@@ -19,29 +19,30 @@ function PremiumListCoponent() {
   const closeInfoAppleTV = () => setShowInfoAppleTV(false);
 
   return (
-    <div className="Premium">
-      <h1 className="premium--heading">Most popular premiums</h1>
+    <div className="premium">
+      <h2 className="premium--heading">Most popular premiums</h2>
       <div className="premium--cards">
         <ul>
-          <li>
+          <li className="premium--option">
             <div
               className="premium--subheading-logo-container"
               onClick={openInfoNetflix}
             >
-              <h2 className="premium--subheading">Netflix</h2>
+              <h1 className="premium--subheading">Netflix</h1>
               <img className="premium--logo" src={netflix} alt="netflix-logo" />
             </div>
 
             {showInfoNetflix === true ? (
               <>
-                <div className="premium--netflixCard">
+                <div className="premium--card">
                   <h3 className="premium--instruction">
                     Choose a plan thats right for you
                   </h3>
                   {/* option cards */}
                   <p>insert option card hereeeeee</p>
                 </div>
-                <p className="premium--price">$4/mo.</p>
+                <div className="premium--bottom-container">
+                <h1 className="premium--price">$4/mo.</h1>
                 <div className="premium--button-container">
                   <button
                     className="premium--cancel-button"
@@ -50,17 +51,18 @@ function PremiumListCoponent() {
                     Cancel
                   </button>
                   <button
-                    className="premium--cancel-button"
+                    className="premium--confirm-button"
                     onClick={closeInfoNetflix}
                   >
                     Confirm
                   </button>
                   {/* onclick add $$ total */}
                 </div>
+                </div>
               </>
             ) : (
               <>
-                <p className="premium--price">$4/mo.</p>
+                <h1 className="premium--price">$4/mo.</h1>
               </>
             )}
           </li>
@@ -70,12 +72,12 @@ function PremiumListCoponent() {
               className="premium--subheading-logo-container"
               onClick={openInfoDisney}
             >
-              <h2 className="premium--subheading">Disney Plus</h2>
+              <h1 className="premium--subheading">Disney Plus</h1>
               <img src={disneyPlus} alt="disneyPlus-logo" />
             </div>
             {showInfoDisney === true ? (
               <>
-                <div className="premium--netflixCard">
+                <div className="premium--card">
                   <h3 className="premium--instruction">
                     Choose a plan thats right for you
                   </h3>
@@ -109,11 +111,11 @@ function PremiumListCoponent() {
           <li>
             <div className="premium--subheading-logo-container"
              onClick={openInfoAppleTV}>
-              <h2 className="premium--subheading">Apple TV</h2>
+              <h1 className="premium--subheading">Apple TV</h1>
               <img src={appleTV} alt="appleTV-logo" />
             </div>
             {showInfoAppleTV === true ? ( <>
-                <div className="premium--netflixCard">
+                <div className="premium--card">
                   <h3 className="premium--instruction">
                     Choose a plan thats right for you
                   </h3>

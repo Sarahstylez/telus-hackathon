@@ -1,0 +1,28 @@
+@use "../../styles/partials/__variables" as *;
+@use "../../styles/partials/__mixins" as *;
+@use "../../styles/partials/__utils" as *;
+
+.navigation {
+  @include flex(center, start);
+  width: 1185px;
+  height: 80px;
+  margin-top: 2rem;
+  border-bottom: 1px solid $color-telus-grey;
+  box-shadow: 0px 14px 33px 0px rgba(0, 0, 0, 0.03);
+
+  &__link {
+    padding: 0.62rem $padding-s;
+
+    &.active {
+      box-shadow: 0 6px 0 0 $color-telus-dark-grey;
+    }
+  }
+
+  &__title {
+    font-family: "Helvetica Neue Light";
+
+    &.active {
+      font-family: "Helvetica Neue Regular" !important;
+    }
+  }
+}
