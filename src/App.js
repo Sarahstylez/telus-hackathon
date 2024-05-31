@@ -24,6 +24,7 @@ function App() {
   const [selectedChannels, setSelectedChannels] = useState([]);
   const [shoppingCart, setShoppingCart] = useState([]);
   const [token, setToken] = useState(0);
+console.log(selectedChannels)
 
   useEffect(() => {
 
