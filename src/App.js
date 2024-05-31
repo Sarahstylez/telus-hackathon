@@ -12,6 +12,7 @@ import Checkout from "./pages/CheckoutPage/Checkout.jsx";
 // import Premiums from "./components/Premiums/Premiums.jsx";
 
 function App() {
+  const [selectedThemePackId, setSelectedThemePackId] = useState(null);
   const [selectedChannels, setSelectedChannels] = useState([]);
   // const [selectedPremium, setSelectedPremium] = useState(null);
 
@@ -38,6 +39,8 @@ function App() {
             element={
               <ThemePackList
                 themePacksData={themePacksData}
+                selectedThemePack={selectedThemePackId}
+                setSelectedThemePack={setSelectedThemePackId}
                 selectedChannels={selectedChannels}
                 setSelectedChannels={setSelectedChannels}
                 onConfirm={handleConfirm}
