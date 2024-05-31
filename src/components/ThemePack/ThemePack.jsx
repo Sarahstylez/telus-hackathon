@@ -1,6 +1,5 @@
 import "./ThemePack.scss";
-// import { useState } from "react";
-// import { useNavigate} from "react-router-dom";
+import { useEffect } from 'react';
 
 export default function ThemePack({
     themePack,
@@ -13,36 +12,54 @@ export default function ThemePack({
     token,
     setToken
 }) {
-    // const navigate = useNavigate();
+
+    useEffect(() => {
+
+        let checkBoxes = document.querySelectorAll(".card__checkbox--checked");
+        checkBoxes.forEach((checkbox, index) => {
+            let card = checkbox.closest(".card-container__card");
+            card.classList.add("card-container__card--selected");
+        })
+        
+    }, [selectedThemePack])
+
     function toggleClick(e, channel) {
+
+        let checkbox = e.target;
+        let card = checkbox.closest(".card-container__card");
         if (e.target.checked) {
             setSelectedChannels([...selectedChannels, channel]);
             console.log("selectedChannels ", selectedChannels);
+
+            card.classList.add("card-container__card--selected");
+
         } else {
             setSelectedChannels(selectedChannels.filter((item) => item !== channel));
             console.log("selectedChannels ", selectedChannels);
+
+            card.classList.remove("card-container__card--selected");
         }
     }
 
     function onClickConfirm() {
-        if (shoppingCart.find(obj => obj.id === themePack.id)) {
+        let checkBoxes = document.querySelectorAll(".card__checkbox--checked");
+
+        if (shoppingCart.find(obj => obj.id === themePack.id) && checkBoxes.length > 2) {
             alert("Theme pack already in cart");
             return;
         }
 
-        let checkBoxes = document.querySelectorAll(".card__checkbox--checked");
         console.log("checkBoxes length ", checkBoxes.length);
         if (checkBoxes.length == 4) {
             setShoppingCart([...shoppingCart, themePack]);
         } else if (checkBoxes.length >= 3) {
             setShoppingCart([...shoppingCart, themePack]);
             setToken(++token);
-            // navigate(`/add-channels`);
 
         } else {
             alert(`Please select at least 3 channels for ${themePack.themepack_name} theme pack`);
         }
-  
+
     }
 
     return (
