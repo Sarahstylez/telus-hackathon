@@ -1,4 +1,4 @@
-import header from "../assets/images/telus-header.svg";
+import header from "../../assets/images/telus-header.svg";
 
 function Header() {
   return (
