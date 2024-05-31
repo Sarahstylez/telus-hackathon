@@ -31,10 +31,14 @@ function App() {
         return acc.concat(pack.channels);
     }, []);
 
-    // const handleConfirm = (selectedChannels) => {
-    //   setSelectedChannels(selectedChannels);
-    // };
-
+    const handleToggleChannel = (channel) => {
+      if (selectedChannels.some(selected => selected.id === channel.id)) {
+        setSelectedChannels(selectedChannels.filter(selected => selected.id !== channel.id));
+      } else {
+        setSelectedChannels([...selectedChannels, channel]);
+      }
+    };
+  
     const selectedThemePackData = themePacksData.find(
         (pack) => pack.id === selectedThemePackId
     );
@@ -95,6 +99,7 @@ function App() {
                             <AddChannels
                                 selectedChannels={selectedChannels}
                                 allChannels={allChannels}
+                                onToggleChannel={handleToggleChannel} 
                             />
                         }
                     />
