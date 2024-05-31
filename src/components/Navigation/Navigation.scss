@@ -4,11 +4,11 @@
 
 .navigation {
   @include flex(center, start);
-  width: 1185px;
+  width: 1160px;
   height: 80px;
   margin-top: 2rem;
   border-bottom: 1px solid $color-telus-grey;
-  box-shadow: 0px 14px 33px 0px rgba(0, 0, 0, 0.03);
+  box-shadow: 0px 30px 33px 0px rgba(0, 0, 0, 0.02);
 
   &__link {
     padding: 0.62rem $padding-s;
