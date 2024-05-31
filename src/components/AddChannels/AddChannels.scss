@@ -4,7 +4,7 @@
 
 .add-channels {
   padding: 20px;
-  margin: 30px;
+  margin: 30px 0;
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   border-radius: 11px;
   .selected-channels,
@@ -71,4 +71,9 @@
 .selected-poster {
   border: 2px solid green;
   border-radius: 12px;
+}
+
+//to hide the last two duplicating channels
+.channel:nth-last-child(-n+2) {
+    display: none;
 }
