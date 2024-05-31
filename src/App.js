@@ -19,6 +19,11 @@ function App() {
       </div>
     </Router>
   );
+    return (
+        <div className="App">
+            <ThemePackList />
+            {/* <TestData /> */}
+        </div>
+    );
 }
-
 export default App;
