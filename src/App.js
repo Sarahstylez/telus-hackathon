@@ -11,6 +11,11 @@ function App() {
       <TestData />
     </div>
   );
+    return (
+        <div className="App">
+            <ThemePackList />
+            {/* <TestData /> */}
+        </div>
+    );
 }
-
 export default App;
