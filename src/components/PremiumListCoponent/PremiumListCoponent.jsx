@@ -1,6 +1,6 @@
-import netflix from "./Assets/netflix-logo.svg";
-import disneyPlus from "./Assets/disney-plus-logo.svg";
-import appleTV from "./Assets/apple-tv-logo.svg";
+import netflix from "../../assets/images/netflix-logo.svg";
+import disneyPlus from "../../assets/images/disney-plus-logo.svg";
+import appleTV from "../../assets/images/apple-tv-logo.svg";
 import "./PremiumListCoponent.scss";
 import { useState } from "react";
 
@@ -20,142 +20,236 @@ function PremiumListCoponent() {
 
   return (
     <div className="premium">
-      <h2 className="premium--heading">Most popular premiums</h2>
-      <div className="premium--cards">
-        <ul>
-          <li className="premium--option">
+      <h3 className="premium__heading">Most popular premiums</h3>
+      <div className="premium__cards">
+          {/* NETFLIX */}
+          <section className="premium__option">
             <div
-              className="premium--subheading-logo-container"
+              className="premium__subheading-logo-container"
               onClick={openInfoNetflix}
             >
-              <h1 className="premium--subheading">Netflix</h1>
-              <img className="premium--logo" src={netflix} alt="netflix-logo" />
+              <h1 className="premium__subheading">Netflix</h1>
+              <img className="premium__logo" src={netflix} alt="netflix-logo" />
             </div>
 
             {showInfoNetflix === true ? (
               <>
-                <div className="premium--card">
-                  <h3 className="premium--instruction">
-                    Choose a plan thats right for you
-                  </h3>
+                <div>
                   {/* option cards */}
-                  <p>insert option card hereeeeee</p>
+                  <p className="addon__instruction">
+                    Choose a plan thats right for you
+                  </p>
+                  <div className="addon__options">
+                    <div className="addon__preminum">
+                      <div className="addon__container">
+                        <h3>Netflix Premium</h3>
+                        <p className="addon__fee">+$4 Due monthly</p>
+                        <ul className="addon__list">
+                          <li>
+                            <p>4K Ultra HD available</p>
+                          </li>
+                          <li>
+                            <p> Watch on 4 devices at the same time</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="addon__standard">
+                      <div className="addon__container">
+                      <h3>Netflix Standard</h3>
+                        <p className="addon__fee">Included</p>
+                        <ul className="addon__list">
+                          <li className="addon__item">
+                            <p>1080 HD available</p>
+                          </li>
+                          <li className="addon__item">
+                            <p>Watch on 2 devices at the same time</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="premium--bottom-container">
-                <h1 className="premium--price">$4/mo.</h1>
-                <div className="premium--button-container">
-                  <button
-                    className="premium--cancel-button"
-                    onClick={closeInfoNetflix}
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    className="premium--confirm-button"
-                    onClick={closeInfoNetflix}
-                  >
-                    Confirm
-                  </button>
-                  {/* onclick add $$ total */}
-                </div>
+
+                <div className="premium__bottom-container">
+                  <h3 className="premium__price">$4/mo.</h3>
+                  <div className="button__container">
+                    <button
+                      className="button__cancel-button"
+                      onClick={closeInfoNetflix}
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      className="button__confirm-button"
+                      onClick={closeInfoNetflix}
+                    >
+                      Confirm
+                    </button>
+                    {/* onclick add $$ total */}
+                  </div>
                 </div>
               </>
             ) : (
               <>
-                <h1 className="premium--price">$4/mo.</h1>
+                <h3 className="premium__price">$4/mo.</h3>
               </>
             )}
-          </li>
-
-          <li>
-            <div
-              className="premium--subheading-logo-container"
+          </section>
+          {/* DISNEY */}
+          <section className="premium__option">
+          <div
+              className="premium__subheading-logo-container"
               onClick={openInfoDisney}
             >
-              <h1 className="premium--subheading">Disney Plus</h1>
-              <img src={disneyPlus} alt="disneyPlus-logo" />
+              <h1 className="premium__subheading">Disney Plus</h1>
+              <img className="premium__logo" src={disneyPlus} alt="disneyplus-logo" />
             </div>
+
             {showInfoDisney === true ? (
               <>
-                <div className="premium--card">
-                  <h3 className="premium--instruction">
-                    Choose a plan thats right for you
-                  </h3>
+                <div>
                   {/* option cards */}
-                  <p>insert option card hereeeeee</p>
+                  <p className="addon__instruction">
+                    Choose a plan thats right for you
+                  </p>
+                  <div className="addon__options">
+                    <div className="addon__preminum">
+                      <div className="addon__container">
+                        <h3>Disney Plus Premium</h3>
+                        <p className="addon__fee">+$4 Due monthly</p>
+                        <ul className="addon__list">
+                          <li>
+                            <p>4K Ultra HD available</p>
+                          </li>
+                          <li>
+                            <p> Watch on 4 devices at the same time</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="addon__standard">
+                      <div className="addon__container">
+                      <h3>Disney Plus Standard</h3>
+                        <p className="addon__fee">Included</p>
+                        <ul className="addon__list">
+                          <li className="addon__item">
+                            <p>1080 HD available</p>
+                          </li>
+                          <li className="addon__item">
+                            <p>Watch on 2 devices at the same time</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <p className="premium--price">$13/mo.</p>
-                <div className="premium--button-container">
-                  <button
-                    className="premium--cancel-button"
-                    onClick={closeInfoDisney}
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    className="premium--cancel-button"
-                    onClick={closeInfoDisney}
-                  >
-                    Confirm
-                  </button>
-                  {/* onclick add $$ total */}
+
+                <div className="premium__bottom-container">
+                  <h3 className="premium__price">$13/mo.</h3>
+                  <div className="button__container">
+                    <button
+                      className="button__cancel-button"
+                      onClick={closeInfoDisney}
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      className="button__confirm-button"
+                      onClick={closeInfoDisney}
+                    >
+                      Confirm
+                    </button>
+                    {/* onclick add $$ total */}
+                  </div>
                 </div>
               </>
             ) : (
               <>
-                <p className="premium--price">$13/mo.</p>
+                <h3 className="premium__price">$13mo.</h3>
               </>
             )}
-          </li>
-
-          <li>
-            <div className="premium--subheading-logo-container"
-             onClick={openInfoAppleTV}>
-              <h1 className="premium--subheading">Apple TV</h1>
-              <img src={appleTV} alt="appleTV-logo" />
+          </section>
+          {/* APPLE */}
+          <section className="premium__option">
+          <div
+              className="premium__subheading-logo-container"
+              onClick={openInfoAppleTV}
+            >
+              <h1 className="premium__subheading">Netflix</h1>
+              <img className="premium__logo" src={appleTV} alt="appleTV-logo" />
             </div>
-            {showInfoAppleTV === true ? ( <>
-                <div className="premium--card">
-                  <h3 className="premium--instruction">
-                    Choose a plan thats right for you
-                  </h3>
+
+            {showInfoAppleTV === true ? (
+              <>
+                <div>
                   {/* option cards */}
-                  <p>insert option card hereeeeee</p>
+                  <p className="addon__instruction">
+                    Choose a plan thats right for you
+                  </p>
+                  <div className="addon__options">
+                    <div className="addon__preminum">
+                      <div className="addon__container">
+                        <h3>Apple TV Premium</h3>
+                        <p className="addon__fee">+$4 Due monthly</p>
+                        <ul className="addon__list">
+                          <li>
+                            <p>4K Ultra HD available</p>
+                          </li>
+                          <li>
+                            <p> Watch on 4 devices at the same time</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="addon__standard">
+                      <div className="addon__container">
+                      <h3>Apple TV Standard</h3>
+                        <p className="addon__fee">Included</p>
+                        <ul className="addon__list">
+                          <li className="addon__item">
+                            <p>1080 HD available</p>
+                          </li>
+                          <li className="addon__item">
+                            <p>Watch on 2 devices at the same time</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <p className="premium--price">$13/mo.</p>
-                <div className="premium--button-container">
-                  <button
-                    className="premium--cancel-button"
-                    onClick={closeInfoAppleTV}
-                  >
-                    Cancel
-                  </button>
-                  <button
-                    className="premium--cancel-button"
-                    onClick={closeInfoAppleTV}
-                  >
-                    Confirm
-                  </button>
-                  {/* onclick add $$ total */}
+
+                <div className="premium__bottom-container">
+                  <h3 className="premium__price">$13/mo.</h3>
+                  <div className="button__container">
+                    <button
+                      className="button__cancel-button"
+                      onClick={closeInfoAppleTV}
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      className="button__confirm-button"
+                      onClick={closeInfoAppleTV}
+                    >
+                      Confirm
+                    </button>
+                    {/* onclick add $$ total */}
+                  </div>
                 </div>
               </>
             ) : (
               <>
-                <p className="premium--price">$13/mo.</p>
+                <h3 className="premium__price">$13/mo.</h3>
               </>
             )}
-          </li>
-        </ul>
+          </section>
+        
 
-        {/* <form action="">
-            <input type="checkbox" id="preminum-netflix"/>
-            <label for="preminum-netflix"><img src={netflix} alt="netflix-logo" /></label>
-            <input type="checkbox" id="preminum-disneyPlus"/>
-            <label for="preminum-disneyPlus"><img src={disneyPlus} alt="disneyPlus-logo" /></label>
-            <input type="checkbox" id="preminum-appleTV"/>
-            <label for="preminum-appleTV"><img src={appleTV} alt="appleTV-logo" /></label>
 
-        </form> */}
       </div>
     </div>
   );
