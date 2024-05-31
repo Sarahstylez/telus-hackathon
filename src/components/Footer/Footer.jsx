@@ -19,7 +19,7 @@ function Footer(props) {
                     </div>
                     <h3>{props.token} tokens</h3>
                     <button className="footer__button" onClick={toCheckout}>
-                        Check Availability
+                        Checkout
                     </button>
                 </section>
             </div>
