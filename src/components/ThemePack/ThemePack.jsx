@@ -14,11 +14,13 @@ export default function ThemePack({
             {themePack.id === selectedThemePack ? (
                 <div
                     className="themePack themePack--active"
-                    onClick={() => setSelectedThemePack(themePack.name)}
+                    onClick={() =>
+                        setSelectedThemePack(themePack.themepack_name)
+                    }
                 >
                     <div className="themePack__top-container themePack__top-container">
                         <h3 className="top-container__heading">
-                            {themePack.name}
+                            {themePack.themepack_name}
                         </h3>
                         <label className="top-container__label">
                             {themePack.label}

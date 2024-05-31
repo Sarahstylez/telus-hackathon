@@ -2,21 +2,22 @@
 @use "./styles/partials/__mixins.scss" as *;
 
 .App {
-  @include flex();
-  flex-direction: column;
+    @include flex();
+    flex-direction: column;
+    padding-bottom: 10rem;
 }
 
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
-  background-color: $color-primary-white;
+    background-color: $color-primary-white;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -24,54 +25,54 @@ body {
 /* -------------------------------------------------------------------------- */
 
 a {
-  text-decoration: none;
-  color: $color-primary-white;
+    text-decoration: none;
+    color: $color-primary-white;
 }
 
 ul {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 // these text styles automatically add the correct specs from the variables.scss file
 
 h1 {
-  @each $property, $value in $dt-page-header {
-    #{$property}: $value;
-  }
+    @each $property, $value in $dt-page-header {
+        #{$property}: $value;
+    }
 }
 
 h2 {
-  @each $property, $value in $dt-subheader {
-    #{$property}: $value;
-  }
+    @each $property, $value in $dt-subheader {
+        #{$property}: $value;
+    }
 }
 
 h3 {
-  @each $property, $value in $dt-title {
-    #{$property}: $value;
-  }
+    @each $property, $value in $dt-title {
+        #{$property}: $value;
+    }
 }
 
 h4 {
-  @each $property, $value in $dt-subtitle {
-    #{$property}: $value;
-  }
+    @each $property, $value in $dt-subtitle {
+        #{$property}: $value;
+    }
 }
 
 h5 {
-  @each $property, $value in $dt-buttons {
-    #{$property}: $value;
-  }
+    @each $property, $value in $dt-buttons {
+        #{$property}: $value;
+    }
 }
 
 h6 {
-  @each $property, $value in $dt-cta {
-    #{$property}: $value;
-  }
+    @each $property, $value in $dt-cta {
+        #{$property}: $value;
+    }
 }
 
 p {
-  @each $property, $value in $dt-body {
-    #{$property}: $value;
-  }
+    @each $property, $value in $dt-body {
+        #{$property}: $value;
+    }
 }
