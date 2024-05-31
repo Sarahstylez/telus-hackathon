@@ -1,0 +1,32 @@
+@use "../../styles/partials/__mixins" as *;
+@use "../../styles/partials/__utils" as *;
+@use "../../styles/partials/__variables" as *;
+
+.footer {
+    position: fixed;
+    width: 100vw;
+    background-color: white;
+    bottom: 0;
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__button {
+        height: 2rem;
+        width: 8rem;
+        background-color: $color-telus-green;
+        border: none;
+        border-radius: 5px;
+        color: white;
+    }
+    &__info {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+    }
+    &__strikethrough {
+        text-decoration: line-through;
+    }
+}

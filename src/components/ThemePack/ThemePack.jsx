@@ -10,7 +10,7 @@ export default function ThemePack({
 
     return (
         <>
-            {console.log(themePack.monthly_cost)}
+            {console.log(themePack)}
             {themePack.id === selectedThemePack ? (
                 <div
                     className="themePack themePack--active"
