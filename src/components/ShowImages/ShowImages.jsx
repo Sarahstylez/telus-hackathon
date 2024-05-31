@@ -1,0 +1,51 @@
+import React from 'react';
+import './ShowImages.scss';
+
+import ae from '../../data/Images/a-and-e-pic.svg';
+import amc from '../../data/Images/amc-pic.svg';
+import cooking from '../../data/Images/cooking-pic.svg';
+import ctv from '../../data/Images/ctv-drama-pic.svg';
+
+const shows = [
+  {
+    id: 1,
+    name: 'a-and-e-pic',
+    imageUrl: ae,
+  },
+  {
+    id: 2,
+    name: 'amc',
+    imageUrl: amc,
+  },
+  {
+    id: 3,
+    name: 'cooking',
+    imageUrl: cooking,
+  },
+  {
+    id: 4,
+    name: 'ctv',
+    imageUrl: ctv,
+  },
+];
+
+const ShowImages = () => {
+  return (
+    <div className="showcase">
+      <h1>Shows List</h1>
+      <div className="shows-grid">
+        {shows.map(show => (
+          <div key={show.id} className="show">
+            <img
+              src={show.imageUrl}
+              alt={show.name}
+            />
+            <h2>{show.name}</h2>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default ShowImages;
