@@ -7,20 +7,20 @@ export default function ThemePack({ themePack, selectedThemePack, setSelectedThe
 
     return (
         <>
+            {console.log(themePack.id, selectedThemePack)}
+            {themePack.id === selectedThemePack ?
 
-            {themePack.name === selectedThemePack ?
-
-                <div className="themePack themePack--active" onClick={() => setSelectedThemePack(themePack.name)}>
-                    <div className="themePack__top-container themePack__top-container">
-                        <h2 className="top-container__heading">{themePack.name}</h2>
-                        <label className="top-container__label">{themePack.label}</label>
+                <div className="themePack themePack--active" onClick={() => setSelectedThemePack(themePack.id)}>
+                    <div className="themePack__top-container">
+                        <h2 className="top-container__heading">{themePack.themepack_name}</h2>
+                        <label className="top-container__label">{themePack.subheader}</label>
                     </div>
                     <div className="themePack__card-container">
-                        {themePack.shows.map(obj => {
+                        {themePack.channels.map(obj => {
                             return (
                                 <div className="card-container__card">
                                     <input className="card__checkbox" type="checkbox" />
-                                    <img className="card__img" src={obj.image} />
+                                    <img className="card__img" src={obj.featured_show.poster} />
                                 </div>
                             );
                         })}
@@ -32,10 +32,10 @@ export default function ThemePack({ themePack, selectedThemePack, setSelectedThe
 
                 :
 
-                <div className="themePack" onClick={() => setSelectedThemePack(themePack.name)}>
+                <div className="themePack" onClick={() => setSelectedThemePack(themePack.id)}>
                     <div className="themePack__top-container">
-                        <h2 className="top-container__heading">{themePack.name}</h2>
-                        <label className="top-container__label">{themePack.label}</label>
+                        <h2 className="top-container__heading">{themePack.themepack_name}</h2>
+                        <label className="top-container__label">{themePack.subheader}</label>
                     </div>
 
                     <div className="themePack__bottom-container">
