@@ -2,55 +2,147 @@ import netflix from "./Assets/netflix-logo.svg";
 import disneyPlus from "./Assets/disney-plus-logo.svg";
 import appleTV from "./Assets/apple-tv-logo.svg";
 import "./PremiumListCoponent.scss";
-import { useState } from 'react';
+import { useState } from "react";
 
-function PremiumListCoponent(){
+function PremiumListCoponent() {
+  const [showInfoNetflix, setShowInfoNetflix] = useState(false);
+  const [showInfoDisney, setShowInfoDisney] = useState(false);
+  const [showInfoAppleTV, setShowInfoAppleTV] = useState(false);
 
-    const [selectedPremium, setSelectedPremium] = useState(null);
+  const openInfoNetflix = () => setShowInfoNetflix(true);
+  const closeInfoNetflix = () => setShowInfoNetflix(false);
 
-const showCard = (elementID) => {
-    document.getElementById(elementID).style.display = "inline";
-}
+  const openInfoDisney = () => setShowInfoDisney(true);
+  const closeInfoDisney = () => setShowInfoDisney(false);
 
-return(
+  const openInfoAppleTV = () => setShowInfoAppleTV(true);
+  const closeInfoAppleTV = () => setShowInfoAppleTV(false);
+
+  return (
     <div className="Premium">
-        <h1 className="premium--heading">Most popular premiums</h1>
-        <div className="premium--cards">
+      <h1 className="premium--heading">Most popular premiums</h1>
+      <div className="premium--cards">
         <ul>
-            <li id="premium--netflix" onClick={showCard("premium--netflixCard")}>
-            {/* <li> */}
-            <div className="premium--subheading-logo-container">
-                <h2 className="premium--subheading">Netflix</h2>
-                <img className= "premium--logo" src={netflix} alt="netflix-logo"/>
+          <li>
+            <div
+              className="premium--subheading-logo-container"
+              onClick={openInfoNetflix}
+            >
+              <h2 className="premium--subheading">Netflix</h2>
+              <img className="premium--logo" src={netflix} alt="netflix-logo" />
             </div>
+
+            {showInfoNetflix === true ? (
+              <>
                 <div className="premium--netflixCard">
-                    
-                    <h3 className="premium--instruction">Choose a plan thats right for you</h3>
-                    {/* option cards */}
-                    <p>insert option card hereeeeee</p>
-                    {/* <p className="premium--price">$4/mo.</p> */}
-                    <div className="premium--button-container">
-                        <button className="premium--cancel-button">Cancel</button>
-                        <button className="premium--cancel-button">Confirm</button>
-                        {/* onclick add $$ total */}
-                    </div>
+                  <h3 className="premium--instruction">
+                    Choose a plan thats right for you
+                  </h3>
+                  {/* option cards */}
+                  <p>insert option card hereeeeee</p>
                 </div>
                 <p className="premium--price">$4/mo.</p>
-            </li>
-            <li>
-                <div className="premium--subheading-logo-container">
-                    <h2 className="premium--subheading">Disney Plus</h2>
-                    <img src={disneyPlus} alt="disneyPlus-logo" />
+                <div className="premium--button-container">
+                  <button
+                    className="premium--cancel-button"
+                    onClick={closeInfoNetflix}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    className="premium--cancel-button"
+                    onClick={closeInfoNetflix}
+                  >
+                    Confirm
+                  </button>
+                  {/* onclick add $$ total */}
+                </div>
+              </>
+            ) : (
+              <>
+                <p className="premium--price">$4/mo.</p>
+              </>
+            )}
+          </li>
+
+          <li>
+            <div
+              className="premium--subheading-logo-container"
+              onClick={openInfoDisney}
+            >
+              <h2 className="premium--subheading">Disney Plus</h2>
+              <img src={disneyPlus} alt="disneyPlus-logo" />
+            </div>
+            {showInfoDisney === true ? (
+              <>
+                <div className="premium--netflixCard">
+                  <h3 className="premium--instruction">
+                    Choose a plan thats right for you
+                  </h3>
+                  {/* option cards */}
+                  <p>insert option card hereeeeee</p>
                 </div>
                 <p className="premium--price">$13/mo.</p>
-            </li>
-            <li>
-                <div className="premium--subheading-logo-container">
-                    <h2 className="premium--subheading">Apple TV</h2>
-                    <img src={appleTV} alt="appleTV-logo" />
+                <div className="premium--button-container">
+                  <button
+                    className="premium--cancel-button"
+                    onClick={closeInfoDisney}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    className="premium--cancel-button"
+                    onClick={closeInfoDisney}
+                  >
+                    Confirm
+                  </button>
+                  {/* onclick add $$ total */}
+                </div>
+              </>
+            ) : (
+              <>
+                <p className="premium--price">$13/mo.</p>
+              </>
+            )}
+          </li>
+
+          <li>
+            <div className="premium--subheading-logo-container"
+             onClick={openInfoAppleTV}>
+              <h2 className="premium--subheading">Apple TV</h2>
+              <img src={appleTV} alt="appleTV-logo" />
+            </div>
+            {showInfoAppleTV === true ? ( <>
+                <div className="premium--netflixCard">
+                  <h3 className="premium--instruction">
+                    Choose a plan thats right for you
+                  </h3>
+                  {/* option cards */}
+                  <p>insert option card hereeeeee</p>
                 </div>
                 <p className="premium--price">$13/mo.</p>
-            </li>
+                <div className="premium--button-container">
+                  <button
+                    className="premium--cancel-button"
+                    onClick={closeInfoAppleTV}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    className="premium--cancel-button"
+                    onClick={closeInfoAppleTV}
+                  >
+                    Confirm
+                  </button>
+                  {/* onclick add $$ total */}
+                </div>
+              </>
+            ) : (
+              <>
+                <p className="premium--price">$13/mo.</p>
+              </>
+            )}
+          </li>
         </ul>
 
         {/* <form action="">
@@ -62,11 +154,9 @@ return(
             <label for="preminum-appleTV"><img src={appleTV} alt="appleTV-logo" /></label>
 
         </form> */}
-        </div>
-
+      </div>
     </div>
-    
-);
+  );
 }
 
 export default PremiumListCoponent;
