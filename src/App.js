@@ -1,5 +1,5 @@
+
 import './App.scss';
-import ShowImages from './components/ShowImages/ShowImages.jsx';
 import ThemePackList from './components/ThemePackList/ThemePackList.jsx';
 import TestData from "./data/TestData";
 import themePacksData from './data/themepacks-and-channel-data.json';
@@ -15,16 +15,17 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <ThemePackList 
-        themePacksData={themePacksData} 
-        selectedThemePack={selectedThemePack} 
-        setSelectedThemePack={setSelectedThemePack} 
-        setSelectedChannels={setSelectedChannels} 
-      />
-      <AddChannels selectedChannels={selectedChannels} allChannels={allChannels} />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<ThemePackList />} />
+          <Route path="/theme-packs" element={<ThemePackList />} />
+          <Route path="/test-data" element={<TestData />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
-
 export default App;
