@@ -18,7 +18,7 @@
             {
                 "id": "120",
                 "name": "AMC",
-                "logo": "../../assets/prime_time/amc.png",
+                "logo": "../../assets/prime_time/amc.svg",
                 "featured_show": {
                     "id": "121",
                     "title": "The Walking Dead",
