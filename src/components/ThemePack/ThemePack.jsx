@@ -23,6 +23,13 @@ export default function ThemePack({
                         <label className="top-container__label">
                             {themePack.subheader}
                         </label>
+            {console.log(themePack.id, selectedThemePack)}
+            {themePack.id === selectedThemePack ?
+
+                <div className="themePack themePack--active" onClick={() => setSelectedThemePack(themePack.name)}>
+                    <div className="themePack__top-container themePack__top-container">
+                        <h3 className="top-container__heading">{themePack.name}</h3>
+                        <label className="top-container__label">{themePack.label}</label>
                     </div>
                     <div className="themePack__card-container">
                         {themePack.channels.map((obj) => {

@@ -1,13 +1,26 @@
-@use "../../partials/colors" as colors;
-@use "../../partials/fonts" as fonts;
+@use "../../styles/partials/__variables" as *;
+@use "../../styles/partials/__mixins" as *;
+@use "../../styles/partials/__utils" as *;
 
 .themePack {
+  display: flex;
+  flex-direction: column;
+  width: 1160px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  border-radius: 11px;
+  align-items: center;
+
+  &--active {
+    border: 1px solid $color-telus-green;
+  }
+
+  &__top-container {
     display: flex;
-    flex-direction: column;
-    width: 1160px;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-    border-radius: 11px;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    width: 1040px;
+  }
 
     &--active {
         border: 1px solid colors.$telus-green;
@@ -31,17 +44,27 @@
     &__bottom-container {
         width: 1040px;
     }
+  &__card-container {
+    display: flex;
+    flex-direction: row;
+    width: 1040px;
+    gap: 15px;
+  }
+
+  &__bottom-container {
+    width: 1040px;
+  }
 }
 
-.top-container {
-    &__heading {
-        @extend .H1;
-    }
+// .top-container {
+//   &__heading {
+//     @extend .H1;
+//   }
 
-    &__label {
-        @extend .H4;
-    }
-}
+//   &__label {
+//     @extend .H4;
+//   }
+// }
 
 .card-container {
     &__card {
@@ -82,3 +105,35 @@
         @extend .H1;
     }
 }
+  &__card {
+    object-fit: cover;
+    height: 400px;
+    width: 300px;
+    overflow: hidden;
+    border-radius: 12px;
+    display: grid;
+    grid-template-areas: "pile";
+    place-items: start end;
+  }
+}
+
+.card {
+  &__checkbox {
+    right: 0;
+    margin-right: 20px;
+    grid-area: pile;
+    z-index: 2;
+    margin-top: 10px;
+  }
+
+  &__img {
+    z-index: 1;
+    grid-area: pile;
+  }
+}
+
+// .bottom-container {
+//   &__price {
+//     @extend .H1;
+//   }
+// }
