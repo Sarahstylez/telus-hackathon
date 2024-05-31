@@ -1,32 +1,52 @@
-import React, { useState } from "react";
-import "./ThemePackList.scss";
-import ThemePack from "../ThemePack/ThemePack.jsx";
-import data from "../../data/themepacks-and-channel-data.json";
+import './ThemePackList.scss'
+import ThemePack from '../ThemePack/ThemePack.jsx';
+import data from '../../data/themepacks-and-channel-data.json';
+import { useState, useEffect } from 'react';
+
+
 
 export default function ThemePackList() {
   const [selectedThemePack, setSelectedThemePack] = useState("100");
+    const [selectedChannels, setSelectedChannels] = useState([]);
+    const [shoppingCart, setShoppingCart] = useState([]);
+    const [token, setToken] = useState(0);
 
+
+    useEffect(() => {
+
+    }, [shoppingCart, token])
   const themePacks = data;
 
   const handleConfirm = (selectedShows) => {
     console.log("Selected Channels:", selectedShows);
   };
 
-  return (
-    <div className="ThemePackList">
-      <div className="ThemePackList__heading-wrapper">
-        <h3 className="heading-wrapper__heading">Most popular theme packs</h3>
-      </div>
+    return (
+        <>
+            {`shopping cart: ${shoppingCart.length}`}<br />
+            {`shopping cart price: ${shoppingCart}`}
+            {`tokens: ${token}`}
+            <div className="ThemePackList">
+                <div className="ThemePackList__heading-wrapper">
+                    <h3 className="heading-wrapper__heading">Most popular theme packs</h3>
+                </div>
 
-      {themePacks.map((themePack) => (
-        <ThemePack
-          key={themePack.id}
-          themePack={themePack}
-          selectedThemePack={selectedThemePack}
-          setSelectedThemePack={setSelectedThemePack}
-          onConfirm={handleConfirm} 
-        />
-      ))}
-    </div>
-  );
+                {console.log("theme packs ", themePacks)}
+
+                {
+                    themePacks.map(themePack => {
+                        console.log("In loop themePack ", themePack);
+                        return <ThemePack key={themePack.id} 
+                        themePack={themePack} selectedThemePack={selectedThemePack} 
+                        setSelectedThemePack={setSelectedThemePack}
+                        selectedChannels={selectedChannels} setSelectedChannels={setSelectedChannels}
+                        shoppingCart={shoppingCart} setShoppingCart={setShoppingCart}
+                        token={token} setToken={setToken}
+                        onConfirm={handleConfirm}/>;
+                    })
+                }
+            </div>
+
+        </>
+    );
 }
