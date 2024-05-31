@@ -9,7 +9,7 @@ export default function ThemePackList() {
   const themePacks = data;
 
   const handleConfirm = (selectedShows) => {
-    console.log("Selected shows:", selectedShows);
+    console.log("Selected Channels:", selectedShows);
   };
 
   return (

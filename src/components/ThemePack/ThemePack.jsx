@@ -7,18 +7,18 @@ export default function ThemePack({
     setSelectedThemePack,
     onConfirm,
 }) {
-    const [selectedShows, setSelectedShows] = useState([]);
+    const [selectedChannels, setSelectedChannels] = useState([]);
 
     const handleConfirm = () => {
-        onConfirm(selectedShows);
+        onConfirm(selectedChannels); 
     };
 
-    const toggleShowSelection = (showId) => {
-        const isSelected = selectedShows.includes(showId);
+    const toggleChannelSelection = (channelId) => {
+        const isSelected = selectedChannels.includes(channelId);
         if (isSelected) {
-            setSelectedShows(selectedShows.filter(id => id !== showId));
+            setSelectedChannels(selectedChannels.filter(id => id !== channelId));
         } else {
-            setSelectedShows([...selectedShows, showId]);
+            setSelectedChannels([...selectedChannels, channelId]);
         }
     };
 
@@ -45,8 +45,8 @@ export default function ThemePack({
                                     <input
                                         className="card__checkbox"
                                         type="checkbox"
-                                        onChange={() => toggleShowSelection(obj.id)}
-                                        checked={selectedShows.includes(obj.id)}
+                                        onChange={() => toggleChannelSelection(obj.id)} // Updated function call
+                                        checked={selectedChannels.includes(obj.id)} // Updated variable name
                                     />
                                     <img
                                         className="card__img"

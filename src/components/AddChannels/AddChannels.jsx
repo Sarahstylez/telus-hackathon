@@ -2,18 +2,21 @@ import React from 'react';
 import './AddChannels.scss';
 
 const AddChannels = ({ selectedChannels, allChannels }) => {
-  const unselectedChannels = allChannels ? allChannels.filter(channel => !selectedChannels.some(selected => selected.id === channel.id)) : [];
+  console.log('Selected Channels:', selectedChannels);
+  const unselectedChannels = allChannels.filter(channel => !selectedChannels.some(selected => selected.id === channel.id));
 
   return (
     <div className="add-channels">
       <div className="selected-channels">
         <h2>Selected Channels</h2>
-        {selectedChannels && (
+        {selectedChannels && selectedChannels.length > 0 ? (
           selectedChannels.map(channel => (
             <div key={channel.id} className="channel">
               <h3>{channel.name}</h3>
             </div>
           ))
+        ) : (
+          <p>No channels selected</p>
         )}
       </div>
       <div className="all-channels">
