@@ -23,9 +23,11 @@ function App() {
     const [selectedChannels, setSelectedChannels] = useState([]);
     const [shoppingCart, setShoppingCart] = useState([]);
     const [token, setToken] = useState(0);
+    const [totalMonthlyCost, setTotalMonthlyCost] = useState(0);
     let cost = 80;
-    let themePackSubtotal = 0;
-    useEffect(() => {}, [shoppingCart, token]);
+    useEffect(() => { 
+        setTotalMonthlyCost(sumMonthlyCost() + cost);
+    }, [shoppingCart, token]);
     // const [selectedPremium, setSelectedPremium] = useState(null);
 
     const allChannels = themePacksData.reduce((acc, pack) => {
@@ -53,8 +55,8 @@ function App() {
         shoppingCart.map(
             (themePackObj) => (sum += parseInt(themePackObj.monthly_cost))
         );
-        cost += sum;
-        themePackSubtotal = sum;
+        // cost += sum;
+        // themePackSubtotal = sum;
         return sum;
     }
 
@@ -95,9 +97,8 @@ function App() {
                             <Checkout
                                 shoppingCart={shoppingCart}
                                 selectedChannels={selectedChannels}
-                                cost={cost}
-                                themePackSubtotal={themePackSubtotal}
-                                // selectedPremium={selectedPremium}
+                                totalMonthlyCost={totalMonthlyCost}
+                            // selectedPremium={selectedPremium}
                             />
                         }
                     />
