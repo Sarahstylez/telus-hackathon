@@ -9,7 +9,7 @@
     bottom: 0;
     padding: 1rem 0;
     z-index: 3;
-
+    border-top: 1.5rem solid $color-telus-purple;
     &__container {
         display: flex;
         flex-direction: row;
@@ -18,8 +18,8 @@
     }
 
     &__button {
-        height: 2rem;
-        width: 8rem;
+        height: 3rem;
+        width: 14rem;
         background-color: $color-telus-green;
         border: none;
         border-radius: 5px;
