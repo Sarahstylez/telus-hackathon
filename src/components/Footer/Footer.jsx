@@ -17,7 +17,7 @@ function Footer(props) {
                             ${props.cost * 1.2}/mo.
                         </h6>
                     </div>
-                    <h3>{props.token} tokens</h3>
+                    <h3>{props.token} Channel Tokens</h3>
                     <button className="footer__button" onClick={toCheckout}>
                         Checkout
                     </button>
