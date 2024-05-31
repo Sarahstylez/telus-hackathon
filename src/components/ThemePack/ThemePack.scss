@@ -29,6 +29,7 @@
   &__card-container {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     width: 1040px;
     gap: $padding-xxs;
   }
@@ -45,13 +46,15 @@
 .card-container {
   &__card {
     object-fit: cover;
-    height: 400px;
-    width: 300px;
     overflow: hidden;
     border-radius: 12px;
     display: grid;
     grid-template-areas: "pile";
     place-items: start end;
+    
+    &--selected {
+      border: 2px solid $color-telus-green;
+    }
   }
 }
 
@@ -76,6 +79,8 @@
     margin: auto;
     margin-bottom: 25%;
   }
+
+
 }
 
 .buttons {

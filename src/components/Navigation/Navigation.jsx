@@ -61,7 +61,7 @@ function Navigation() {
         </div>
       </NavLink>
       <div className="navigation__link">
-        <h3 className="navigation__title">Extras</h3>
+        <h3 className="navigation__title">4. Essentials</h3>
       </div>
     </section>
   );
