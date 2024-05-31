@@ -9,10 +9,11 @@ import AddChannels from "./components/AddChannels/AddChannels.jsx";
 import Navigation from "./components/Navigation/Navigation.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Checkout from "./pages/CheckoutPage/Checkout.jsx";
+// import Premiums from "./components/Premiums/Premiums.jsx";
 
 function App() {
-  const [selectedThemePack, setSelectedThemePack] = useState("100");
   const [selectedChannels, setSelectedChannels] = useState([]);
+  // const [selectedPremium, setSelectedPremium] = useState(null);
 
   const allChannels = themePacksData.reduce((acc, pack) => {
     return acc.concat(pack.channels);
@@ -21,6 +22,10 @@ function App() {
   const handleConfirm = (selectedChannels) => {
     setSelectedChannels(selectedChannels);
   };
+
+  const selectedThemePackData = themePacksData.find(
+    (pack) => pack.id === selectedThemePackId
+  );
 
   return (
     <Router>
@@ -33,16 +38,23 @@ function App() {
             element={
               <ThemePackList
                 themePacksData={themePacksData}
-                selectedThemePack={selectedThemePack}
-                setSelectedThemePack={setSelectedThemePack}
+                selectedChannels={selectedChannels}
+                setSelectedChannels={setSelectedChannels}
                 onConfirm={handleConfirm}
               />
             }
           />
-
-          {/*<Route path="/premiums" element={<Premiums />} /> */}
           <Route path="/test-data" element={<TestData />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route
+            path="/checkout"
+            element={
+              <Checkout
+                selectedThemePack={selectedThemePackData}
+                selectedChannels={selectedChannels}
+                // selectedPremium={selectedPremium}
+              />
+            }
+          />
           <Route
             path="/add-channels"
             element={
@@ -51,6 +63,15 @@ function App() {
                 allChannels={allChannels}
               />
             }
+            // />
+            // <Route
+            //   path="/premiums"
+            //   element={
+            //     <Premiums
+            //       selectedPremium={selectedPremium}
+            //       setSelectedPremium={setSelectedPremium}
+            //     />
+            //   }
           />
         </Routes>
         <RealFooter />
