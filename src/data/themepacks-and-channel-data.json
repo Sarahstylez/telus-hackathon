@@ -1,0 +1,48 @@
+[
+    {
+        "id": "100",
+        "themepack_name": "Prime Time",
+        "channels": [
+            {
+                "id": "110",
+                "name": "A&E",
+                "logo": "./primetime-data/AE.png",
+                "featured_show": {
+                    "id": "111",
+                    "title": "The First 48",
+                    "poster": "./primetime-data/AE-First-48.jpeg"
+                }
+            },
+            {
+                "id": "120",
+                "name": "AMC",
+                "logo": "./primetime-data/amc.png",
+                "featured_show": {
+                    "id": "121",
+                    "title": "The Walking Dead",
+                    "poster": "./primetime-data/AMC Walking dead.jpeg"
+                }
+            },
+            {
+                "id": "130",
+                "name": "CTV Drama",
+                "logo": "./primetime-data/CTV_Drama_Channel_2019.png",
+                "featured_show": {
+                    "id": "131",
+                    "title": "Killing Eve",
+                    "poster": "./primetime-data/CTV killing eve.jpeg"
+                }
+            },
+            {
+                "id": "140",
+                "name": "TLC",
+                "logo": "./primetime-data/TLC.png",
+                "featured_show": {
+                    "id": "141",
+                    "title": "90 Day Fiance",
+                    "poster": "./primetime-data/TLC 90 day fiance.jpeg"
+                }
+            }
+        ]
+    }
+]
