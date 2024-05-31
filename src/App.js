@@ -1,8 +1,6 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.scss";
 import Header from "./components/Header/Header.js";
 import RealFooter from "./components/RealFooter/RealFooter.js";
-import Navigation from "./components/Navigation/Navigation.jsx";
 import ThemePackList from "./components/ThemePackList/ThemePackList.jsx";
 import TestData from "./data/TestData";
 import React, { useState } from 'react';

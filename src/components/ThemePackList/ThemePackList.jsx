@@ -5,18 +5,12 @@ import { useState, useEffect } from 'react';
 
 
 export default function ThemePackList() {
-<<<<<<< HEAD
-  const [selectedThemePack, setSelectedThemePack] = useState("100");
-=======
-    const themePacks = data;
-
     const [selectedThemePack, setSelectedThemePack] = useState("100");
->>>>>>> develop
     const [selectedChannels, setSelectedChannels] = useState([]);
     const [shoppingCart, setShoppingCart] = useState([]);
     const [token, setToken] = useState(0);
 
-
+    
     function sumMonthlyCost() {
         let sum = 0;
         shoppingCart.map(themePackObj =>  sum += parseInt(themePackObj.monthly_cost));
@@ -26,14 +20,11 @@ export default function ThemePackList() {
     useEffect(() => {
     
     }, [shoppingCart, token])
-<<<<<<< HEAD
   const themePacks = data;
 
   const handleConfirm = (selectedShows) => {
     console.log("Selected Channels:", selectedShows);
   };
-=======
->>>>>>> develop
 
     
     return (
