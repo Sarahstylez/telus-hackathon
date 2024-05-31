@@ -14,6 +14,7 @@ import AddChannels from "./components/AddChannels/AddChannels.jsx";
 import Navigation from "./components/Navigation/Navigation.jsx";
 import Checkout from "./pages/CheckoutPage/Checkout.jsx";
 // import Premiums from "./components/Premiums/Premiums.jsx";
+import PremiumListCoponent from './components/PremiumListCoponent/PremiumListCoponent';
 
 function App() {
     const themePacks = themePacksData;
@@ -102,7 +103,7 @@ function App() {
                             />
                         }
                     />
-
+                    <Route path="/premiums" element={<PremiumListCoponent/>} />
                     {/* <Route
                         path="/premiums"
                         element={

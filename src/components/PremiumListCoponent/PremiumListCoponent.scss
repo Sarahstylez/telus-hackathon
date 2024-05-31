@@ -1,0 +1,116 @@
+@use "../../styles/partials/__variables" as *;
+@use "../../styles/partials/__mixins" as *;
+@use "../../styles/partials/__utils" as *;
+
+
+.premium{
+    margin:2rem;
+    width: 1160px;
+
+    &__heading{
+        margin-bottom: 2rem;
+    }
+
+    &__option{
+        border: $color-telus-green solid 1px;
+        padding: 50px;
+        border-radius: 12px;
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        margin-top: $padding-l;
+        padding-bottom: $padding-m;
+    }
+    &__subheading-logo-container{
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 3%;
+    }
+
+
+    &__bottom-container{
+        display: flex;
+        justify-content: space-between;
+        margin-top: $padding-m;
+    }
+
+}
+
+.addon{
+    &__instruction{
+        border-bottom: $color-telus-grey solid 1px ;
+        margin-bottom: 2.25rem;
+        padding-bottom: 1rem;
+    }
+
+    &__standard{
+        border: $color-telus-dark-grey solid 1px ;
+        width: 40%;
+        height: 100%;
+        
+    }
+    &__preminum{
+        border: $color-telus-green solid 1px ;
+        width: 40%;
+        height: 100%;
+        
+    }
+    &__container{
+        padding: 1.25rem;
+    }
+
+    &__options{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        height: 250px;
+    }
+
+    &__fee{
+        border-bottom: $color-telus-grey solid 1px ;
+        padding-top: 1.25rem;
+        padding-bottom: 1.25rem;
+        margin-bottom: 1.25rem;
+    }
+    &__list{
+        margin-left: 12%;
+        list-style-image: url(../../assets/images/checkmark.png);
+    }
+    &__item{}
+}
+
+.button{
+    &__container{
+        display: flex;
+        width: 40%;
+        justify-content: space-evenly;
+    }
+
+    &__cancel-button{
+        border: none;
+        background: none;
+        color: $color-telus-black;
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        text-underline-offset: $padding-xxxs;
+        // padding-left: $padding-xxl;
+        // padding-right: $padding-xxl;
+        padding-right: $padding-s;
+        padding-top: $padding-xs;
+        padding-bottom: $padding-xs;
+        border-radius: 12px;
+    }
+    
+    &__confirm-button {
+        border: none;
+        background: $color-telus-green;
+        padding-left: $padding-xxl;
+        padding-right: $padding-xxl;
+    
+        padding-top: $padding-xs;
+        padding-bottom: $padding-xs;
+        border-radius: 12px;
+    
+        &:hover {
+          filter: brightness(50%);
+        }
+      }
+}
