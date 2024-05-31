@@ -28,7 +28,7 @@ const AddChannels = ({ selectedChannels, allChannels, onToggleChannel }) => {
             </div>
           ))
         ) : (
-            <p>No channels selected</p>
+            <p className='nochannels-selected'>No channels selected</p>
           )}
       </div>
 
