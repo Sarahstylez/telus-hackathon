@@ -22,6 +22,28 @@
     width: 1040px;
   }
 
+    &--active {
+        border: 1px solid colors.$telus-green;
+    }
+
+    &__top-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 1040px;
+    }
+
+    &__card-container {
+        display: flex;
+        flex-direction: row;
+        width: 1040px;
+        gap: 15px;
+    }
+
+    &__bottom-container {
+        width: 1040px;
+    }
   &__card-container {
     display: flex;
     flex-direction: row;
@@ -45,6 +67,44 @@
 // }
 
 .card-container {
+    &__card {
+        object-fit: cover;
+        height: 400px;
+        width: 300px;
+        overflow: hidden;
+        border-radius: 12px;
+        display: grid;
+        grid-template-areas: "pile";
+        place-items: start end;
+    }
+}
+
+.card {
+    &__checkbox {
+        right: 0;
+        margin-right: 20px;
+        grid-area: pile;
+        z-index: 2;
+        margin-top: 10px;
+    }
+
+    &__img {
+        z-index: 1;
+        grid-area: pile;
+    }
+    &__logo {
+        z-index: 2;
+        grid-area: pile;
+        margin: auto;
+        margin-bottom: 25%;
+    }
+}
+
+.bottom-container {
+    &__price {
+        @extend .H1;
+    }
+}
   &__card {
     object-fit: cover;
     height: 400px;
