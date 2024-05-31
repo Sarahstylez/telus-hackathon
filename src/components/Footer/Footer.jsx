@@ -12,9 +12,12 @@ function Footer(props) {
                 <section className="footer__container">
                     <div className="footer__info">
                         <h2>Bundle total</h2>
-                        <h6>$80/mo.</h6>
-                        <h6 className="footer__discount">$80/mo.</h6>
+                        <h6>${props.cost}/mo.</h6>
+                        <h6 className="footer__discount">
+                            ${props.cost * 1.2}/mo.
+                        </h6>
                     </div>
+                    <h3>{props.token} tokens</h3>
                     <button className="footer__button" onClick={toCheckout}>
                         Check Availability
                     </button>
