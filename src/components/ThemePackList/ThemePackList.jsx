@@ -5,14 +5,12 @@ import { useState, useEffect } from 'react';
 
 
 export default function ThemePackList() {
-    const themePacks = data;
-
     const [selectedThemePack, setSelectedThemePack] = useState("100");
     const [selectedChannels, setSelectedChannels] = useState([]);
     const [shoppingCart, setShoppingCart] = useState([]);
     const [token, setToken] = useState(0);
 
-
+    
     function sumMonthlyCost() {
         let sum = 0;
         shoppingCart.map(themePackObj =>  sum += parseInt(themePackObj.monthly_cost));
@@ -22,6 +20,11 @@ export default function ThemePackList() {
     useEffect(() => {
     
     }, [shoppingCart, token])
+  const themePacks = data;
+
+  const handleConfirm = (selectedShows) => {
+    console.log("Selected Channels:", selectedShows);
+  };
 
     
     return (
@@ -44,7 +47,8 @@ export default function ThemePackList() {
                         setSelectedThemePack={setSelectedThemePack}
                         selectedChannels={selectedChannels} setSelectedChannels={setSelectedChannels}
                         shoppingCart={shoppingCart} setShoppingCart={setShoppingCart}
-                        token={token} setToken={setToken}/>;
+                        token={token} setToken={setToken}
+                        onConfirm={handleConfirm}/>;
                     })
                 }
             </div>

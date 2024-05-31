@@ -1,4 +1,6 @@
 import "./ThemePack.scss";
+import { useState } from "react";
+import { useNavigate} from "react-router-dom";
 
 export default function ThemePack({
     themePack,
@@ -11,7 +13,7 @@ export default function ThemePack({
     token,
     setToken
 }) {
-
+    const navigate = useNavigate();
     function toggleClick(e, channel) {
         if (e.target.checked) {
             setSelectedChannels([...selectedChannels, channel]);
@@ -23,7 +25,6 @@ export default function ThemePack({
     }
 
     function onClickConfirm() {
-
         if (shoppingCart.find(obj => obj.id === themePack.id)) {
             alert("Theme pack already in cart");
             return;
@@ -36,6 +37,7 @@ export default function ThemePack({
         } else if (checkBoxes.length >= 3) {
             setShoppingCart([...shoppingCart, themePack]);
             setToken(++token);
+            navigate(`/add-channels`);
 
         } else {
             alert(`Please select at least 3 channels for ${themePack.themepack_name} theme pack`);
