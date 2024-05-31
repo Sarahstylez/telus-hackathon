@@ -1,31 +1,51 @@
 import './ThemePack.scss';
+import { useState } from 'react';
 
-export default function ThemePack({ themePack }) {
-    return (<>
+export default function ThemePack({ themePack, selectedThemePack, setSelectedThemePack }) {
 
-        <div className="themePack">
-            <div className="themePack__top-container">
-                <h2 className="top-container__heading">{themePack.name}</h2>
-                <label className="top-container__label">{themePack.label}</label>
-            </div>
-            <div className="themePack__card-container">
-                {/* <div className="card-container__card"> */}
-                    {/* <input className="card__checkbox" input="checkbox" />
-                    <img className="card__img" src={themePack.image} /> */}
-                    {themePack.shows.map(obj => {
-                        return (
-                            <div className="card-container__card">
-                                <input className="card__checkbox" type="checkbox" />
-                                <img className="card__img" src={obj.image} />
-                                
-                            </div>
-                        );
-                    })}
-                {/* </div> */}
-            </div>
+    const [selectedShow, setSelectedShow] = useState(null);
 
-            <h3 className="themePack__price">$9/mo.</h3>
-        </div>
-    </>
+    return (
+        <>
+
+            {themePack.name === selectedThemePack ?
+
+                <div className="themePack themePack--active" onClick={() => setSelectedThemePack(themePack.name)}>
+                    <div className="themePack__top-container themePack__top-container">
+                        <h2 className="top-container__heading">{themePack.name}</h2>
+                        <label className="top-container__label">{themePack.label}</label>
+                    </div>
+                    <div className="themePack__card-container">
+                        {themePack.shows.map(obj => {
+                            return (
+                                <div className="card-container__card">
+                                    <input className="card__checkbox" type="checkbox" />
+                                    <img className="card__img" src={obj.image} />
+                                </div>
+                            );
+                        })}
+                    </div>
+                    <div className="themePack__bottom-container">
+                        <h3 className="bottom-container__price">$9/mo.</h3>
+                    </div>
+                </div>
+
+                :
+
+                <div className="themePack" onClick={() => setSelectedThemePack(themePack.name)}>
+                    <div className="themePack__top-container">
+                        <h2 className="top-container__heading">{themePack.name}</h2>
+                        <label className="top-container__label">{themePack.label}</label>
+                    </div>
+
+                    <div className="themePack__bottom-container">
+                        <h3 className="bottom-container__price">$9/mo.</h3>
+                    </div>
+                </div >
+
+            }
+
+
+        </>
     )
 }
