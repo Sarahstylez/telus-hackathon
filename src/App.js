@@ -3,13 +3,15 @@ import "./App.scss";
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import themePacksData from "./data/themepacks-and-channel-data.json";
+
+import TestData from "./data/TestData";
 import Header from "./components/Header/Header.js";
 import RealFooter from "./components/RealFooter/RealFooter.js";
+import Footer from "./components/Footer/Footer.jsx";
 import ThemePackList from "./components/ThemePackList/ThemePackList.jsx";
-import TestData from "./data/TestData";
-import themePacksData from './data/themepacks-and-channel-data.json';
-import AddChannels from './components/AddChannels/AddChannels.jsx';
-import Navigation from './components/Navigation/Navigation.jsx';
+import AddChannels from "./components/AddChannels/AddChannels.jsx";
+import Navigation from "./components/Navigation/Navigation.jsx";
 import Checkout from "./pages/CheckoutPage/Checkout.jsx";
 
 
@@ -48,6 +50,7 @@ function App() {
     <Router>
       <div className="App">
 
+        <Header />
         <Navigation />
         {`shopping cart: ${shoppingCart.length}`}<br />
         {`shopping cart price: ${sumMonthlyCost()}`}<br />
@@ -55,7 +58,8 @@ function App() {
         <Routes>
           <Route
             path="/theme-packs"
-            element={<ThemePackList
+            element={
+            <ThemePackList
               themePacks={themePacks}
               selectedThemePack={selectedThemePack}
               setSelectedThemePack={setSelectedThemePack}
@@ -71,6 +75,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/add-channels" element={<AddChannels selectedChannels={selectedChannels} allChannels={allChannels} />} />
         </Routes>
+        <Footer />
         <RealFooter />
       </div>
     </Router>
