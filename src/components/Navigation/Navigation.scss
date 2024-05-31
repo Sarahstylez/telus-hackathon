@@ -1,0 +1,22 @@
+@use "../../styles/partials/__variables" as *;
+@use "../../styles/partials/__mixins" as *;
+@use "../../styles/partials/__utils" as *;
+
+.navigation {
+  @include flex(center, start);
+  width: 1185px;
+  height: 80px;
+  margin-top: 2rem;
+  border-bottom: 1px solid $color-telus-grey;
+  &__link {
+    padding: 1.25rem $padding-m;
+    &:active {
+      color: $color-telus-black;
+      box-shadow: 0 6px 0 0 $color-telus-dark-grey;
+    }
+    &:hover {
+      color: $color-telus-black;
+      box-shadow: 0 6px 0 0 $color-telus-dark-grey;
+    }
+  }
+}
