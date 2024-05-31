@@ -8,8 +8,9 @@ const AddChannels = ({ selectedChannels, allChannels, onToggleChannel }) => {
 
   return (
     <div className="add-channels">
-      <div className="selected-channels">
-        <h2>Selected Channels</h2>
+      <div className="selected-channels-title">
+        <h2>Selected Channels</h2></div>
+         <div className='selected-channels'>
         {selectedChannels && selectedChannels.length > 0 ? (
           selectedChannels.map(channel => (
             <div key={channel.id} className={`channel selected`}>
@@ -26,8 +27,9 @@ const AddChannels = ({ selectedChannels, allChannels, onToggleChannel }) => {
           <p>No channels selected</p>
         )}
       </div>
-      <div className="all-channels">
+      
         <h2 className='title-additional-channels'>Additional Channels</h2>
+        <div className="all-channels">
         {unselectedChannels.map(channel => (
           <div key={channel.id} className={`channel ${isMaxSelected ? 'disabled' : ''}`}>
             <input

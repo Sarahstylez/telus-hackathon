@@ -29,9 +29,9 @@ function App() {
     return acc.concat(pack.channels);
   }, []);
 
-  const handleConfirm = (selectedChannels) => {
-    setSelectedChannels(selectedChannels);
-  };
+  // const handleConfirm = (selectedChannels) => {
+  //   setSelectedChannels(selectedChannels);
+  // };
 
   const handleToggleChannel = (channel) => {
     if (selectedChannels.some((selected) => selected.id === channel.id)) {
