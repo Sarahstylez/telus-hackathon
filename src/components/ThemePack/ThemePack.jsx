@@ -1,5 +1,5 @@
 import "./ThemePack.scss";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function ThemePack({
     themePack,
@@ -12,6 +12,7 @@ export default function ThemePack({
     token,
     setToken,
 }) {
+
 
     useEffect(() => {
 
@@ -48,7 +49,8 @@ export default function ThemePack({
             alert("Theme pack already in cart");
             return;
         }
-
+        // themePack.channel = themePack.channel.filter(channel => channel.id !== )
+        // themePack.channel = selectedChannels;
         console.log("checkBoxes length ", checkBoxes.length);
         if (checkBoxes.length == 4) {
             setShoppingCart([...shoppingCart, themePack]);
@@ -61,8 +63,37 @@ export default function ThemePack({
         } else {
             // remove themepack from shoppingcart
             setShoppingCart(shoppingCart.filter((item) => item.id !== themePack.id));
+            if (token > 0) {
+                setToken(--token);
+            }
         }
 
+    }
+
+    function onClickCancel() {
+        let checkBoxes = document.querySelectorAll(".card__checkbox--checked");
+        checkBoxes.forEach((checkBox, index) => {
+            checkBox.classList.remove(".card__checkbox--checked");
+            checkBox.checked = false;
+            let card = checkBox.closest(".card-container__card");
+            setSelectedChannels([]);
+            card.classList.remove("card-container__card--selected");
+        })
+
+        //        let checkbox = e.target;
+        // let card = checkbox.closest(".card-container__card");
+        // if (e.target.checked) {
+        //     setSelectedChannels([...selectedChannels, channel]);
+        //     console.log("selectedChannels ", selectedChannels);
+
+        //     card.classList.add("card-container__card--selected");
+
+        // } else {
+        //     setSelectedChannels(selectedChannels.filter((item) => item !== channel));
+        //     console.log("selectedChannels ", selectedChannels);
+
+        //     card.classList.remove("card-container__card--selected");
+        // }
     }
 
 
@@ -119,7 +150,7 @@ export default function ThemePack({
                             <h6 className="price__month">/mo.</h6>
                         </div>
                         <div className="bottom-container__buttons">
-                            <button className="buttons__cancel-button">Cancel</button>
+                            <button className="buttons__cancel-button" onClick={onClickCancel}>Cancel</button>
                             {/*onClick, add selectedShows to shopping cart; update price in footer */}
                             <button
                                 className="buttons__confirm-button"

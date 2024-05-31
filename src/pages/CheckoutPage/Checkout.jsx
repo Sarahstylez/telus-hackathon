@@ -1,7 +1,7 @@
 import "./Checkout.scss";
 import { useNavigate } from "react-router-dom";
 
-function Checkout({ selectedThemePack, selectedChannels, selectedPremium }) {
+function Checkout({ shoppingCart, selectedChannels, selectedPremium }) {
   const navigate = useNavigate();
 
   const handleEditThemePacks = () => {
@@ -21,10 +21,11 @@ function Checkout({ selectedThemePack, selectedChannels, selectedPremium }) {
         <div className="checkout__card">
           <div className="checkout__card-header">
             <h1 className="checkout__card-title">
-              {selectedThemePack
-                ? selectedThemePack.themepack_name
+              {console.log(shoppingCart)}
+              {shoppingCart && shoppingCart.length > 0
+                ? `${shoppingCart[0]?.themepack_name} + ${selectedChannels.length} Additional Channels`
                 : "No Theme Pack Selected"}{" "}
-              + {selectedChannels.length} Additional Channels
+              
             </h1>
             <h4
               className="checkout__card-edit-cta"
