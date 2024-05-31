@@ -75,3 +75,9 @@ p {
     #{$property}: $value;
   }
 }
+
+button {
+  @each $property, $value in $dt-buttons {
+    #{$property}: $value;
+  }
+}

@@ -9,9 +9,11 @@
   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
   border-radius: 11px;
   align-items: center;
+  padding-top: $padding-m;
+  padding-bottom: $padding-m;
 
   &--active {
-    border: 1px solid $color-telus-green;
+    border: 2px solid $color-telus-green;
   }
 
   &__top-container {
@@ -20,51 +22,25 @@
     justify-content: space-between;
     align-items: center;
     width: 1040px;
+    margin-bottom: $padding-l;
+
   }
 
-  &--active {
-    border: 1px solid $color-telus-green;
+  &__card-container {
+    display: flex;
+    flex-direction: row;
+    width: 1040px;
+    gap: $padding-xxs;
   }
 
-  &__top-container {
+  &__bottom-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     width: 1040px;
-  }
-
-  &__card-container {
-    display: flex;
-    flex-direction: row;
-    width: 1040px;
-    gap: 15px;
-  }
-
-  &__bottom-container {
-    width: 1040px;
-  }
-  &__card-container {
-    display: flex;
-    flex-direction: row;
-    width: 1040px;
-    gap: 15px;
-  }
-
-  &__bottom-container {
-    width: 1040px;
+    margin-top: $padding-m;
   }
 }
-
-// .top-container {
-//   &__heading {
-//     @extend .H1;
-//   }
-
-//   &__label {
-//     @extend .H4;
-//   }
-// }
 
 .card-container {
   &__card {
@@ -82,16 +58,18 @@
 .card {
   &__checkbox {
     right: 0;
-    margin-right: 20px;
+    margin-right: $padding-xs;
     grid-area: pile;
     z-index: 2;
-    margin-top: 10px;
+    margin-top: $padding-xs;
+    accent-color: $color-telus-green;
   }
 
   &__img {
     z-index: 1;
     grid-area: pile;
   }
+
   &__logo {
     z-index: 2;
     grid-area: pile;
@@ -100,39 +78,34 @@
   }
 }
 
-.bottom-container {
-  // &__price {
-  //   @extend .H1;
-  // }
-  &__card {
-    object-fit: cover;
-    height: 400px;
-    width: 300px;
-    overflow: hidden;
+.buttons {
+  &__cancel-button {
+    border: none;
+    background: none;
+    color: $color-telus-black;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: $padding-xxxs;
+    // padding-left: $padding-xxl;
+    // padding-right: $padding-xxl;
+    padding-right: $padding-s;
+    padding-top: $padding-xs;
+    padding-bottom: $padding-xs;
     border-radius: 12px;
-    display: grid;
-    grid-template-areas: "pile";
-    place-items: start end;
+  }
+
+  &__confirm-button {
+    border: none;
+    background: $color-telus-green;
+    padding-left: $padding-xxl;
+    padding-right: $padding-xxl;
+
+    padding-top: $padding-xs;
+    padding-bottom: $padding-xs;
+    border-radius: 12px;
+
+    &:hover {
+      filter: brightness(50%);
+    }
   }
 }
-
-.card {
-  &__checkbox {
-    right: 0;
-    margin-right: 20px;
-    grid-area: pile;
-    z-index: 2;
-    margin-top: 10px;
-  }
-
-  &__img {
-    z-index: 1;
-    grid-area: pile;
-  }
-}
-
-// .bottom-container {
-//   &__price {
-//     @extend .H1;
-//   }
-// }
