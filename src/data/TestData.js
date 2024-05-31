@@ -10,7 +10,7 @@ function TestData() {
         <>
             <h1>{testData.themepack_name}</h1>
             <ul>
-                {testData[3].channels.map((item) => {
+                {testData[0].channels.map((item) => {
                     return (
                         <li key={item.id}>
                             <h2>{item.name}</h2>

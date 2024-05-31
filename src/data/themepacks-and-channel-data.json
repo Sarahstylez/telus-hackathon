@@ -11,8 +11,8 @@
                 "logo": "../../assets/prime_time/AE.png",
                 "featured_show": {
                     "id": "111",
-                    "title": "The First 48",
-                    "poster": "../../assets/prime_time/AE-First-48.jpeg"
+                    "title": "When Chickens Attack",
+                    "poster": "../../assets/prime_time/a-and-e-pic.svg"
                 }
             },
             {
@@ -22,7 +22,7 @@
                 "featured_show": {
                     "id": "121",
                     "title": "The Walking Dead",
-                    "poster": "../../assets/prime_time/AMC Walking dead.jpeg"
+                    "poster": "../../assets/prime_time/amc-pic.svg"
                 }
             },
             {
@@ -32,7 +32,7 @@
                 "featured_show": {
                     "id": "131",
                     "title": "Killing Eve",
-                    "poster": "../../assets/prime_time/CTV killing eve.jpeg"
+                    "poster": "../../assets/prime_time/ctv-drama-pic.svg"
                 }
             },
             {
@@ -42,7 +42,7 @@
                 "featured_show": {
                     "id": "141",
                     "title": "90 Day Fiance",
-                    "poster": "../../assets/prime_time/TLC 90 day fiance.jpeg"
+                    "poster": "../../assets/prime_time/tlc-pic.svg"
                 }
             }
         ]
