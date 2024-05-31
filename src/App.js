@@ -1,12 +1,16 @@
-import "./App.scss";
+
+import './App.scss';
+import ThemePackList from './components/ThemePackList/ThemePackList.jsx';
 import TestData from "./data/TestData";
 
 function App() {
-    return (
-        <div className="App">
+  return (
+    <div className="App">
+      <ThemePackList />
             <TestData />
-        </div>
-    );
+    </div>
+  );
+
 }
 
 export default App;
