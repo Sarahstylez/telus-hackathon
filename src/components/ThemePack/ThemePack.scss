@@ -1,0 +1,40 @@
+.themePack {
+    display: flex;
+    flex-direction: column;
+    outline: 1px solid blue;
+    background-color: grey;
+
+    &__top-container {
+        display: flex;
+        flex-direction: row;
+        outline: 1px solid red;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__card-container {
+        display: flex;
+        flex-direction: row;
+        outline: 1px solid green;
+    }
+
+}
+
+.card-container {
+
+    &__card {
+        object-fit: cover;
+        height: 500px;
+        width: 200px;
+        overflow: hidden;
+        border-radius: 12px;
+    }
+
+}
+
+.card {
+
+    &__checkbox {
+        position: absolute;
+    }
+}
