@@ -10,7 +10,7 @@ export default function ThemePack({
 
     return (
         <>
-            {console.log(themePack.id, selectedThemePack)}
+            {console.log(themePack.monthly_cost)}
             {themePack.id === selectedThemePack ? (
                 <div
                     className="themePack themePack--active"
@@ -36,16 +36,12 @@ export default function ThemePack({
                                         className="card__img"
                                         src={obj.featured_show.poster}
                                     />
-                                    <img
-                                        className="card__logo"
-                                        src={obj.logo}
-                                    />
                                 </div>
                             );
                         })}
                     </div>
                     <div className="themePack__bottom-container">
-                        <h3 className="bottom-container__price">$12/mo.</h3>
+                        <h3 className="bottom-container__price">$9/mo.</h3>
                     </div>
                 </div>
             ) : (
@@ -63,7 +59,9 @@ export default function ThemePack({
                     </div>
 
                     <div className="themePack__bottom-container">
-                        <h3 className="bottom-container__price">$12/mo.</h3>
+                        <h3 className="bottom-container__price">
+                            {`$${themePack.monthly_cost}/mo.`}
+                        </h3>
                     </div>
                 </div>
             )}
