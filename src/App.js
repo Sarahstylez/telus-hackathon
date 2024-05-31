@@ -1,12 +1,11 @@
+import React, { useState } from 'react';
 import './App.scss';
 import ThemePackList from './components/ThemePackList/ThemePackList.jsx';
 import TestData from "./data/TestData";
 import themePacksData from './data/themepacks-and-channel-data.json';
 import AddChannels from './components/AddChannels/AddChannels.jsx';
-import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
-import Header from './header/header.js';
 import Navigation from './components/Navigation/Navigation.jsx';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   const [selectedThemePack, setSelectedThemePack] = useState("100");
@@ -16,18 +15,30 @@ function App() {
     return acc.concat(pack.channels);
   }, []);
 
+  const handleConfirm = (selectedShows) => {
+    setSelectedChannels(selectedShows);
+  };
+
   return (
     <Router>
       <div className="App">
-        <Header />
         <Navigation />
         <Routes>
-          <Route path="/" element={<ThemePackList />} />
-          <Route path="/theme-packs" element={<ThemePackList />} />
+          <Route
+            path="/theme-packs"
+            element={<ThemePackList
+              themePacksData={themePacksData}
+              selectedThemePack={selectedThemePack}
+              setSelectedThemePack={setSelectedThemePack}
+              onConfirm={handleConfirm} 
+            />}
+          />
           <Route path="/test-data" element={<TestData />} />
+          <Route path="/add-channels" element={<AddChannels selectedChannels={selectedChannels} allChannels={allChannels} />} />
         </Routes>
       </div>
     </Router>
   );
 }
+
 export default App;

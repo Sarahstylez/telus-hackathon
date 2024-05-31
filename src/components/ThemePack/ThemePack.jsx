@@ -5,8 +5,22 @@ export default function ThemePack({
     themePack,
     selectedThemePack,
     setSelectedThemePack,
+    onConfirm,
 }) {
     const [selectedShows, setSelectedShows] = useState([]);
+
+    const handleConfirm = () => {
+        onConfirm(selectedShows);
+    };
+
+    const toggleShowSelection = (showId) => {
+        const isSelected = selectedShows.includes(showId);
+        if (isSelected) {
+            setSelectedShows(selectedShows.filter(id => id !== showId));
+        } else {
+            setSelectedShows([...selectedShows, showId]);
+        }
+    };
 
     return (
         <>
@@ -27,10 +41,12 @@ export default function ThemePack({
                     <div className="themePack__card-container">
                         {themePack.channels.map((obj) => {
                             return (
-                                <div className="card-container__card">
+                                <div className="card-container__card" key={obj.id}>
                                     <input
                                         className="card__checkbox"
                                         type="checkbox"
+                                        onChange={() => toggleShowSelection(obj.id)}
+                                        checked={selectedShows.includes(obj.id)}
                                     />
                                     <img
                                         className="card__img"
@@ -48,8 +64,7 @@ export default function ThemePack({
                         <h3 className="bottom-container__price">{`$${themePack.monthly_cost}/mo.`}</h3>
                         <div className="bottom-container__buttons">
                             <button className="buttons__cancel-button">Cancel</button>
-                            {/*onClick, add selectedShows to shopping cart; update price in footer */}
-                            <button className="buttons__confirm-button">Confirm</button>
+                            <button className="buttons__confirm-button" onClick={handleConfirm}>Confirm</button>
                         </div>
                     </div>
                 </div>
