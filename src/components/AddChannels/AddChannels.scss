@@ -72,8 +72,3 @@
   border: 2px solid green;
   border-radius: 12px;
 }
-
-//to hide the last two duplicating channels
-.channel:nth-last-child(-n+2) {
-    display: none;
-}
