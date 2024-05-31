@@ -7,9 +7,12 @@ const AddChannels = ({ selectedChannels, allChannels, onToggleChannel }) => {
   const isMaxSelected = selectedChannels.length >= 4;
 
   return (
+    <>
+    <div>
+    <h4 className='choose-channels'>Choose from below: </h4>
     <div className="add-channels">
       <div className="selected-channels-title">
-        <h2>Selected Channels</h2></div>
+        <h4>Selected</h4></div>
          <div className='selected-channels'>
         {selectedChannels && selectedChannels.length > 0 ? (
           selectedChannels.map(channel => (
@@ -28,7 +31,7 @@ const AddChannels = ({ selectedChannels, allChannels, onToggleChannel }) => {
         )}
       </div>
       
-        <h2 className='title-additional-channels'>Additional Channels</h2>
+        <h4 className='title-additional-channels'>Additional Channels</h4>
         <div className="all-channels">
         {unselectedChannels.map(channel => (
           <div key={channel.id} className={`channel ${isMaxSelected ? 'disabled' : ''}`}>
@@ -43,7 +46,8 @@ const AddChannels = ({ selectedChannels, allChannels, onToggleChannel }) => {
           </div>
         ))}
       </div>
-    </div>
+    </div></div>
+    </>
   );
 };
 
