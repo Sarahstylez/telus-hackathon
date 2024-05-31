@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   const [selectedThemePack, setSelectedThemePack] = useState("100");
   const [selectedChannels, setSelectedChannels] = useState([]); 
-
+  
   const allChannels = themePacksData.reduce((acc, pack) => {
     return acc.concat(pack.channels);
   }, []);

@@ -1,5 +1,6 @@
 import "./ThemePack.scss";
 import { useState } from "react";
+import { useNavigate} from "react-router-dom";
 
 export default function ThemePack({
     themePack,
@@ -8,9 +9,11 @@ export default function ThemePack({
     onConfirm,
 }) {
     const [selectedChannels, setSelectedChannels] = useState([]);
+    const navigate = useNavigate();
 
     const handleConfirm = () => {
         onConfirm(selectedChannels); 
+        navigate(`/add-channels`);
     };
 
     const toggleChannelSelection = (channelId) => {
@@ -45,8 +48,8 @@ export default function ThemePack({
                                     <input
                                         className="card__checkbox"
                                         type="checkbox"
-                                        onChange={() => toggleChannelSelection(obj.id)} // Updated function call
-                                        checked={selectedChannels.includes(obj.id)} // Updated variable name
+                                        onChange={() => toggleChannelSelection(obj.id)} 
+                                        checked={selectedChannels.includes(obj.id)} 
                                     />
                                     <img
                                         className="card__img"
