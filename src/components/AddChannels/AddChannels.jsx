@@ -7,6 +7,9 @@ const AddChannels = ({ selectedChannels, allChannels, onToggleChannel }) => {
   const numVisibleAdditionalChannels = Math.max(14 - selectedChannels.length, 0); 
 
   return (
+    <>
+    <div className='whole-section'>
+    <h4 className='choose-channels'>Choose from below:</h4>
     <div className="add-channels">
       <div className="selected-channels-title">
         <h4>Selected Channels</h4>
@@ -47,6 +50,8 @@ const AddChannels = ({ selectedChannels, allChannels, onToggleChannel }) => {
         {numVisibleAdditionalChannels === 0 && <p>No additional channels available</p>}
       </div>
     </div>
+    </div>
+    </>
   );
 };
 
