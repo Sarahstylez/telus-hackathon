@@ -8,7 +8,7 @@
             {
                 "id": "110",
                 "name": "A&E",
-                "logo": "../../assets/prime_time/AE.png",
+                "logo": "../../assets/prime_time/a-and-e.svg",
                 "featured_show": {
                     "id": "111",
                     "title": "When Chickens Attack",
@@ -28,7 +28,7 @@
             {
                 "id": "130",
                 "name": "CTV Drama",
-                "logo": "../../assets/prime_time/CTV_Drama_Channel_2019.png",
+                "logo": "../../assets/prime_time/ctv-drama.svg",
                 "featured_show": {
                     "id": "131",
                     "title": "Killing Eve",
@@ -38,7 +38,7 @@
             {
                 "id": "140",
                 "name": "TLC",
-                "logo": "../../assets/prime_time/TLC.png",
+                "logo": "../../assets/prime_time/tlc.svg",
                 "featured_show": {
                     "id": "141",
                     "title": "90 Day Fiance",
