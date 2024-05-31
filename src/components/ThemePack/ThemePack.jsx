@@ -5,8 +5,44 @@ export default function ThemePack({
     themePack,
     selectedThemePack,
     setSelectedThemePack,
+    selectedChannels,
+    setSelectedChannels,
+    shoppingCart,
+    setShoppingCart,
+    token,
+    setToken
 }) {
-    const [selectedShows, setSelectedShows] = useState([]);
+
+    function toggleClick(e, channel) {
+        if (e.target.checked) {
+            setSelectedChannels([...selectedChannels, channel]);
+            console.log("selectedChannels ", selectedChannels);
+        } else {
+            setSelectedChannels(selectedChannels.filter((item) => item !== channel));
+            console.log("selectedChannels ", selectedChannels);
+        }
+    }
+
+    function onClickConfirm() {
+
+        if (shoppingCart.find(obj => obj.id === themePack.id)) {
+            alert("Theme pack already in cart");
+            return;
+        }
+
+        let checkBoxes = document.querySelectorAll(".card__checkbox--checked");
+        console.log("checkBoxes length ", checkBoxes.length);
+        if (checkBoxes.length == 4) {
+            setShoppingCart([...shoppingCart, themePack]);
+        } else if (checkBoxes.length >= 3) {
+            setShoppingCart([...shoppingCart, themePack]);
+            setToken(++token);
+
+        } else {
+            alert(`Please select at least 3 channels for ${themePack.themepack_name} theme pack`);
+        }
+  
+    }
 
     return (
         <>
@@ -28,10 +64,21 @@ export default function ThemePack({
                         {themePack.channels.map((obj) => {
                             return (
                                 <div className="card-container__card">
-                                    <input
-                                        className="card__checkbox"
-                                        type="checkbox"
-                                    />
+                                    {selectedChannels.find(channel => channel.id === obj.id) ?
+                                        <input
+                                            className="card__checkbox card__checkbox--checked"
+                                            type="checkbox"
+                                            onClick={(e) => toggleClick(e, obj)}
+                                            checked
+                                        /> :
+                                        <input
+                                            className="card__checkbox"
+                                            type="checkbox"
+                                            onClick={(e) => toggleClick(e, obj)}
+                                        />
+
+                                    }
+
                                     <img
                                         className="card__img"
                                         src={obj.featured_show.poster}
@@ -49,7 +96,7 @@ export default function ThemePack({
                         <div className="bottom-container__buttons">
                             <button className="buttons__cancel-button">Cancel</button>
                             {/*onClick, add selectedShows to shopping cart; update price in footer */}
-                            <button className="buttons__confirm-button">Confirm</button>
+                            <button className="buttons__confirm-button" onClick={onClickConfirm}>Confirm</button>
                         </div>
                     </div>
                 </div>
