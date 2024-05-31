@@ -4,16 +4,14 @@ import './AddChannels.scss';
 const AddChannels = ({ selectedChannels, allChannels, onToggleChannel }) => {
   console.log('Selected Channels:', selectedChannels);
   const unselectedChannels = allChannels.filter(channel => !selectedChannels.some(selected => selected.id === channel.id));
-  const isMaxSelected = selectedChannels.length >= 4;
+  const numVisibleAdditionalChannels = Math.max(14 - selectedChannels.length, 0); 
 
   return (
-    <>
-    <div>
-    <h4 className='choose-channels'>Choose from below: </h4>
     <div className="add-channels">
       <div className="selected-channels-title">
-        <h4>Selected</h4></div>
-         <div className='selected-channels'>
+        <h4>Selected Channels</h4>
+      </div>
+      <div className='selected-channels'>
         {selectedChannels && selectedChannels.length > 0 ? (
           selectedChannels.map(channel => (
             <div key={channel.id} className={`channel selected`}>
@@ -27,27 +25,28 @@ const AddChannels = ({ selectedChannels, allChannels, onToggleChannel }) => {
             </div>
           ))
         ) : (
-          <p>No channels selected</p>
-        )}
+            <p>No channels selected</p>
+          )}
       </div>
-      
-        <h4 className='title-additional-channels'>Additional Channels</h4>
-        <div className="all-channels">
-        {unselectedChannels.map(channel => (
-          <div key={channel.id} className={`channel ${isMaxSelected ? 'disabled' : ''}`}>
+
+      <div className="additional-channels-title">
+        <h4>Additional Channels</h4>
+      </div>
+      <div className="all-channels">
+        {unselectedChannels.slice(0, numVisibleAdditionalChannels).map(channel => (
+          <div key={channel.id} className="channel">
             <input
               type="checkbox"
               checked={false}
-              disabled={isMaxSelected}
               onChange={() => onToggleChannel(channel)}
             />
             <img className="additional-logo" src={channel.logo} alt={channel.name} />
             <img className="additional-poster" src={channel.featured_show.poster} alt={channel.featured_show.title} />
           </div>
         ))}
+        {numVisibleAdditionalChannels === 0 && <p>No additional channels available</p>}
       </div>
-    </div></div>
-    </>
+    </div>
   );
 };
 
