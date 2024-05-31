@@ -1,0 +1,194 @@
+[
+    {
+        "id": "100",
+        "themepack_name": "Prime Time",
+        "monthly_cost": "9",
+        "subheader": "For original drama",
+        "channels": [
+            {
+                "id": "110",
+                "name": "A&E",
+                "logo": "../../assets/prime_time/a-and-e.svg",
+                "featured_show": {
+                    "id": "111",
+                    "title": "When Chickens Attack",
+                    "poster": "../../assets/prime_time/a-and-e-pic.svg"
+                }
+            },
+            {
+                "id": "120",
+                "name": "AMC",
+                "logo": "../../assets/prime_time/amc.png",
+                "featured_show": {
+                    "id": "121",
+                    "title": "The Walking Dead",
+                    "poster": "../../assets/prime_time/amc-pic.svg"
+                }
+            },
+            {
+                "id": "130",
+                "name": "CTV Drama",
+                "logo": "../../assets/prime_time/ctv-drama.svg",
+                "featured_show": {
+                    "id": "131",
+                    "title": "Killing Eve",
+                    "poster": "../../assets/prime_time/ctv-drama-pic.svg"
+                }
+            },
+            {
+                "id": "140",
+                "name": "TLC",
+                "logo": "../../assets/prime_time/tlc.svg",
+                "featured_show": {
+                    "id": "141",
+                    "title": "90 Day Fiance",
+                    "poster": "../../assets/prime_time/tlc-pic.svg"
+                }
+            }
+        ]
+    },
+    {
+        "id": "200",
+        "themepack_name": "Living",
+        "monthly_cost": "9",
+        "subheader": "For food and DIY lovers",
+        "channels": [
+            {
+                "id": "210",
+                "name": "Food Network",
+                "logo": "../../assets/living/food-network.svg",
+                "featured_show": {
+                    "id": "211",
+                    "title": "Cooking",
+                    "poster": "../../assets/living/food-network-pic.svg"
+                }
+            },
+            {
+                "id": "220",
+                "name": "HGTV",
+                "logo": "../../assets/living/hgtv.svg",
+                "featured_show": {
+                    "id": "221",
+                    "title": "Home Renos",
+                    "poster": "../../assets/living/hgtv-pic.svg"
+                }
+            },
+            {
+                "id": "230",
+                "name": "The Cooking Channel",
+                "logo": "../../assets/living/cooking.svg",
+                "featured_show": {
+                    "id": "231",
+                    "title": "Pie Time",
+                    "poster": "../../assets/living/cooking-pic.svg"
+                }
+            },
+            {
+                "id": "240",
+                "name": "TLC",
+                "logo": "../../assets/living/makeful.svg",
+                "featured_show": {
+                    "id": "241",
+                    "title": "DIY Carpentry",
+                    "poster": "../../assets/living/makeful-pic.svg"
+                }
+            }
+        ]
+    },
+    {
+        "id": "300",
+        "themepack_name": "Sportsnet & Beyond",
+        "monthly_cost": "12",
+        "subheader": "For sports fans",
+        "channels": [
+            {
+                "id": "310",
+                "name": "Sportsnet",
+                "logo": "../../assets/sportsnet/sportsnet.svg",
+                "featured_show": {
+                    "id": "311",
+                    "title": "Vancouver Hockey",
+                    "poster": "../../assets/sportsnet/sportsnet-pic.svg"
+                }
+            },
+            {
+                "id": "320",
+                "name": "SN360",
+                "logo": "../../assets/sportsnet/sn-360.svg",
+                "featured_show": {
+                    "id": "321",
+                    "title": "Basketball",
+                    "poster": "../../assets/sportsnet/sn-360-pic.svg"
+                }
+            },
+            {
+                "id": "330",
+                "name": "NBC Golf Channel",
+                "logo": "../../assets/sportsnet/golf.svg",
+                "featured_show": {
+                    "id": "331",
+                    "title": "Golf",
+                    "poster": "../../assets/sportsnet/golf-pic.svg"
+                }
+            },
+            {
+                "id": "340",
+                "name": "NFL Network",
+                "logo": "../../assets/sportsnet/nfl-network copy.svg",
+                "featured_show": {
+                    "id": "341",
+                    "title": "Football",
+                    "poster": "../../assets/sportsnet/nfl-network.svg"
+                }
+            }
+        ]
+    },
+    {
+        "id": "400",
+        "themepack_name": "TSN & Beyond",
+        "monthly_cost": "12",
+        "subheader": "For sports fans",
+        "channels": [
+            {
+                "id": "410",
+                "name": "TSN 1",
+                "logo": "../../assets/TSN/tsn-1.svg",
+                "featured_show": {
+                    "id": "411",
+                    "title": "Extreme Curling",
+                    "poster": "../../assets/TSN/tsn-1-pic.svg"
+                }
+            },
+            {
+                "id": "420",
+                "name": "TSN 2",
+                "logo": "../../assets/TSN/tsn-2.svg",
+                "featured_show": {
+                    "id": "421",
+                    "title": "Soccer",
+                    "poster": "../../assets/TSN/tsn-2-pic.svg"
+                }
+            },
+            {
+                "id": "430",
+                "name": "NBC Golf Channel",
+                "logo": "../../assets/sportsnet/golf.svg",
+                "featured_show": {
+                    "id": "431",
+                    "title": "Golf",
+                    "poster": "../../assets/sportsnet/golf-pic.svg"
+                }
+            },
+            {
+                "id": "440",
+                "name": "NFL Network",
+                "logo": "../../assets/sportsnet/nfl-network copy.svg",
+                "featured_show": {
+                    "id": "441",
+                    "title": "Football",
+                    "poster": "../../assets/sportsnet/nfl-network.svg"
+                }
+            }
+        ]
+    }
+]
