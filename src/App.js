@@ -1,7 +1,12 @@
 import "./App.scss";
 
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 import themePacksData from "./data/themepacks-and-channel-data.json";
 
@@ -13,7 +18,6 @@ import ThemePackList from "./components/ThemePackList/ThemePackList.jsx";
 import AddChannels from "./components/AddChannels/AddChannels.jsx";
 import Navigation from "./components/Navigation/Navigation.jsx";
 import Checkout from "./pages/CheckoutPage/Checkout.jsx";
-// import Premiums from "./components/Premiums/Premiums.jsx";
 import PremiumListCoponent from "./components/PremiumListCoponent/PremiumListCoponent";
 
 function App() {
@@ -63,6 +67,7 @@ function App() {
         <Header />
         <Navigation />
         <Routes>
+          <Route path="/" element={<Navigate to="/theme-packs" replace />} />
           <Route
             path="/theme-packs"
             element={
