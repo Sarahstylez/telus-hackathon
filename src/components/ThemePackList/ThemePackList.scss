@@ -1,0 +1,15 @@
+@use "../../styles/partials/__variables" as *;
+
+.ThemePackList {
+  display: flex;
+  flex-direction: column;
+  gap: $padding-xl;
+  align-items: center;
+  margin: $padding-xl 0;
+
+  &__heading-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 1164px;
+  }
+}
