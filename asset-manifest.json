@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/telus-hackathon/static/css/main.2acd73fc.css",
-    "main.js": "/telus-hackathon/static/js/main.26fe8a93.js",
+    "main.js": "/telus-hackathon/static/js/main.38f81551.js",
     "static/media/telus-header.svg": "/telus-hackathon/static/media/telus-header.7ebc131c009901ec459bcbeea2f00721.svg",
     "static/media/HelveticaNeueNormal.otf": "/telus-hackathon/static/media/HelveticaNeueNormal.ddb209473d7df560da50.otf",
     "static/media/footer-real.svg": "/telus-hackathon/static/media/footer-real.8c9d954503fbf9881a513a6ab5d018be.svg",
@@ -12,10 +12,10 @@
     "static/media/disney-plus-logo.svg": "/telus-hackathon/static/media/disney-plus-logo.cdf1cdfb517976ad4f879845e5e33f10.svg",
     "index.html": "/telus-hackathon/index.html",
     "main.2acd73fc.css.map": "/telus-hackathon/static/css/main.2acd73fc.css.map",
-    "main.26fe8a93.js.map": "/telus-hackathon/static/js/main.26fe8a93.js.map"
+    "main.38f81551.js.map": "/telus-hackathon/static/js/main.38f81551.js.map"
   },
   "entrypoints": [
     "static/css/main.2acd73fc.css",
-    "static/js/main.26fe8a93.js"
+    "static/js/main.38f81551.js"
   ]
 }
