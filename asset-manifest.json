@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/static/css/main.7ed65de2.css",
-    "main.js": "/static/js/main.20e6d7c0.js",
-    "static/media/telus-header.svg": "/static/media/telus-header.b6e36068482a3cbaf76181a98e098e05.svg",
+    "main.js": "/static/js/main.dcfad091.js",
+    "static/media/telus-header.svg": "/static/media/telus-header.7ebc131c009901ec459bcbeea2f00721.svg",
     "static/media/HelveticaNeueNormal.otf": "/static/media/HelveticaNeueNormal.ddb209473d7df560da50.otf",
-    "static/media/footer-real.svg": "/static/media/footer-real.2eff7a5f409bdaa91d96c510bee44f9b.svg",
+    "static/media/footer-real.svg": "/static/media/footer-real.8c9d954503fbf9881a513a6ab5d018be.svg",
     "static/media/HelveticaNeueLight.otf": "/static/media/HelveticaNeueLight.3c86ba8cf3a9ae24e59a.otf",
     "static/media/HelveticaNeueMedium.otf": "/static/media/HelveticaNeueMedium.a7c3c98319c1341d5aa5.otf",
-    "static/media/netflix-logo.svg": "/static/media/netflix-logo.345e82254651bba7ff0234d49134ebed.svg",
-    "static/media/apple-tv-logo.svg": "/static/media/apple-tv-logo.52697cc5c20703a7e9f9bb7d0c28f9e1.svg",
-    "static/media/disney-plus-logo.svg": "/static/media/disney-plus-logo.b7953c6b562d0107dd8a02be05f01f48.svg",
+    "static/media/netflix-logo.svg": "/static/media/netflix-logo.14fae9635b0cde697c9472c730d166b8.svg",
+    "static/media/apple-tv-logo.svg": "/static/media/apple-tv-logo.60885299471b6ce5acbabbcb751b3388.svg",
+    "static/media/disney-plus-logo.svg": "/static/media/disney-plus-logo.cdf1cdfb517976ad4f879845e5e33f10.svg",
     "index.html": "/index.html",
     "main.7ed65de2.css.map": "/static/css/main.7ed65de2.css.map",
-    "main.20e6d7c0.js.map": "/static/js/main.20e6d7c0.js.map"
+    "main.dcfad091.js.map": "/static/js/main.dcfad091.js.map"
   },
   "entrypoints": [
     "static/css/main.7ed65de2.css",
-    "static/js/main.20e6d7c0.js"
+    "static/js/main.dcfad091.js"
   ]
 }
