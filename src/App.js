@@ -28,6 +28,9 @@ function App() {
     let cost = 80;
     useEffect(() => { 
         setTotalMonthlyCost(sumMonthlyCost() + cost);
+    let themePackSubtotal = 0;
+    useEffect(() => {
+        sumMonthlyCost();
     }, [shoppingCart, token]);
     // const [selectedPremium, setSelectedPremium] = useState(null);
 
@@ -66,6 +69,11 @@ function App() {
             <div className="App">
                 <Header />
                 <Navigation />
+                {/* {`shopping cart: ${shoppingCart.length}`}
+                <br />
+                {`shopping cart price: ${sumMonthlyCost()}`}
+                <br />
+                {`tokens: ${token}`} */}
                 <Routes>
                     <Route
                         path="/theme-packs"
@@ -120,6 +128,7 @@ function App() {
                         }
                     /> */}
                 </Routes>
+                <div className="hidden">{sumMonthlyCost()}</div>
                 <Footer cost={cost} token={token} />
                 <RealFooter />
             </div>
