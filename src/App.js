@@ -23,7 +23,11 @@ function App() {
     const [selectedChannels, setSelectedChannels] = useState([]);
     const [shoppingCart, setShoppingCart] = useState([]);
     const [token, setToken] = useState(0);
+    const [totalMonthlyCost, setTotalMonthlyCost] = useState(0);
+    const [premiumShoppingCart, setPremiumShoppingCart] = useState([]);
     let cost = 80;
+    useEffect(() => { 
+        setTotalMonthlyCost(sumMonthlyCost() + cost);
     let themePackSubtotal = 0;
     useEffect(() => {
         sumMonthlyCost();
@@ -55,8 +59,8 @@ function App() {
         shoppingCart.map(
             (themePackObj) => (sum += parseInt(themePackObj.monthly_cost))
         );
-        cost += sum;
-        themePackSubtotal = sum;
+        // cost += sum;
+        // themePackSubtotal = sum;
         return sum;
     }
 
@@ -70,7 +74,6 @@ function App() {
                 {`shopping cart price: ${sumMonthlyCost()}`}
                 <br />
                 {`tokens: ${token}`} */}
-
                 <Routes>
                     <Route
                         path="/theme-packs"
@@ -98,9 +101,9 @@ function App() {
                             <Checkout
                                 shoppingCart={shoppingCart}
                                 selectedChannels={selectedChannels}
-                                cost={cost}
-                                themePackSubtotal={themePackSubtotal}
-                                // selectedPremium={selectedPremium}
+                                totalMonthlyCost={totalMonthlyCost}
+                                premiumShoppingCart={premiumShoppingCart}
+                            // selectedPremium={selectedPremium}
                             />
                         }
                     />
@@ -114,7 +117,7 @@ function App() {
                             />
                         }
                     />
-                    <Route path="/premiums" element={<PremiumListCoponent />} />
+                    <Route path="/premiums" element={<PremiumListCoponent premiumShoppingCart={premiumShoppingCart} setPremiumShoppingCart={setPremiumShoppingCart}/>} />
                     {/* <Route
                         path="/premiums"
                         element={

@@ -14,7 +14,7 @@ function Footer(props) {
                         <h2>Bundle total</h2>
                         <h6>${props.cost}/mo.</h6>
                         <h6 className="footer__discount">
-                            ${props.cost * 1.2}/mo.
+                            ${(props.cost * 1.2).toFixed(2)}/mo.
                         </h6>
                     </div>
                     <h3>{props.token} Channel Tokens</h3>

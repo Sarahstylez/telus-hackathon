@@ -39,10 +39,18 @@
     @include flex(start, right);
     padding: $padding-xxl 0;
     &-container {
+      display: flex;
       flex-direction: column;
+      align-items: flex-end;
+    }
+    &-inner-container {
+      display: flex;
+      flex-direction: row;
     }
     &-title {
-      width: 10rem;
+    
+      color: $color-telus-purple;
+      margin-bottom: $padding-m;
     }
     &-cost {
       width: 10rem;
