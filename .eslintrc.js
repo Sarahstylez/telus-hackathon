@@ -4,6 +4,7 @@ module.exports = {
     es2021: true,
   },
   extends: "eslint:recommended",
+  plugins: ["react-hooks"],
   parserOptions: {
     ecmaVersion: 12,
     sourceType: "module",
