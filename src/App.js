@@ -18,7 +18,7 @@ import ThemePackList from "./components/ThemePackList/ThemePackList.jsx";
 import AddChannels from "./components/AddChannels/AddChannels.jsx";
 import Navigation from "./components/Navigation/Navigation.jsx";
 import Checkout from "./pages/CheckoutPage/Checkout.jsx";
-import PremiumListCoponent from "./components/PremiumListCoponent/PremiumListCoponent";
+import PremiumListComponent from "./components/PremiumListCoponent/PremiumListCoponent";
 
 function App() {
   const themePacks = themePacksData;
@@ -33,7 +33,7 @@ function App() {
 
   useEffect(() => {
     setTotalMonthlyCost(sumMonthlyCost() + cost);
-  }, [shoppingCart, token]);
+  }, [shoppingCart, token, cost]);
 
   const allChannels = themePacksData.reduce((acc, pack) => {
     return acc.concat(pack.channels);
@@ -49,14 +49,10 @@ function App() {
     }
   };
 
-  const selectedThemePackData = themePacksData.find(
-    (pack) => pack.id === selectedThemePackId
-  );
-
   function sumMonthlyCost() {
     let sum = 0;
     shoppingCart.forEach(
-      (themePackObj) => (sum += parseInt(themePackObj.monthly_cost))
+      (themePackObj) => (sum += parseInt(themePackObj.monthly_cost, 10))
     );
     return sum;
   }
@@ -109,7 +105,7 @@ function App() {
           <Route
             path="/premiums"
             element={
-              <PremiumListCoponent
+              <PremiumListComponent
                 premiumShoppingCart={premiumShoppingCart}
                 setPremiumShoppingCart={setPremiumShoppingCart}
               />
