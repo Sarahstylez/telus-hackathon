@@ -40,7 +40,9 @@ function App() {
     return sum;
   }, [shoppingCart]);
 
+  // Use the sumMonthlyCost function within the useEffect
   useEffect(() => {
+    // Effect callback to calculate and set the total monthly cost
     const calculateTotalMonthlyCost = () => {
       setTotalMonthlyCost(sumMonthlyCost() + cost);
     };
