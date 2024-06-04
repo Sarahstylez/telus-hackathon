@@ -18,7 +18,6 @@ import Navigation from "./components/Navigation/Navigation.jsx";
 import Checkout from "./pages/CheckoutPage/Checkout.jsx";
 import PremiumListComponent from "./components/PremiumListCoponent/PremiumListCoponent.jsx";
 
-// Utility function to calculate total monthly cost
 const calculateTotalMonthlyCost = (shoppingCart, cost) => {
   const sum = shoppingCart.reduce(
     (acc, item) => acc + parseInt(item.monthly_cost, 10),
