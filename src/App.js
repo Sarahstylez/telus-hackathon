@@ -1,6 +1,6 @@
 import "./App.scss";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import {
   HashRouter as Router,
   Routes,
@@ -31,17 +31,17 @@ function App() {
   const [premiumShoppingCart, setPremiumShoppingCart] = useState([]);
   let cost = 80;
 
-  const sumMonthlyCost = useCallback(() => {
-    let sum = 0;
-    shoppingCart.forEach(
-      (themePackObj) => (sum += parseInt(themePackObj.monthly_cost, 10))
-    );
-    return sum;
-  }, [shoppingCart]);
-
   useEffect(() => {
+    const sumMonthlyCost = () => {
+      let sum = 0;
+      shoppingCart.forEach(
+        (themePackObj) => (sum += parseInt(themePackObj.monthly_cost, 10))
+      );
+      return sum;
+    };
+
     setTotalMonthlyCost(sumMonthlyCost() + cost);
-  }, [shoppingCart, token, cost, sumMonthlyCost]);
+  }, [shoppingCart, token, cost]);
 
   const allChannels = themePacksData.reduce((acc, pack) => {
     return acc.concat(pack.channels);
