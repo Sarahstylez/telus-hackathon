@@ -10,7 +10,7 @@ import {
 
 import themePacksData from "./data/themepacks-and-channel-data.json";
 
-import TestData from "./data/TestData";
+import TestData from "./data/TestData.js";
 import Header from "./components/Header/Header.js";
 import RealFooter from "./components/RealFooter/RealFooter.js";
 import Footer from "./components/Footer/Footer.jsx";
@@ -18,7 +18,7 @@ import ThemePackList from "./components/ThemePackList/ThemePackList.jsx";
 import AddChannels from "./components/AddChannels/AddChannels.jsx";
 import Navigation from "./components/Navigation/Navigation.jsx";
 import Checkout from "./pages/CheckoutPage/Checkout.jsx";
-import PremiumListComponent from "./components/PremiumListCoponent/PremiumListCoponent";
+import PremiumListComponent from "./components/PremiumListCoponent/PremiumListCoponent.jsx";
 
 function App() {
   const themePacks = themePacksData;
