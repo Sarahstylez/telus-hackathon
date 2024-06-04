@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 module.exports = {
   env: {
     browser: true,
@@ -18,6 +20,6 @@ module.exports = {
       "warn",
       { additionalHooks: "sumMonthlyCost" },
     ],
-    ...(process.env.CI ? {} : { "no-unused-vars": "warn" }),
+    ...(process.env.CI === "true" ? {} : { "no-unused-vars": "warn" }),
   },
 };
