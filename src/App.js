@@ -1,5 +1,4 @@
 import "./App.scss";
-
 import React, { useState, useEffect } from "react";
 import {
   HashRouter as Router,
@@ -9,7 +8,6 @@ import {
 } from "react-router-dom";
 
 import themePacksData from "./data/themepacks-and-channel-data.json";
-
 import TestData from "./data/TestData.js";
 import Header from "./components/Header/Header.js";
 import RealFooter from "./components/RealFooter/RealFooter.js";
@@ -20,6 +18,15 @@ import Navigation from "./components/Navigation/Navigation.jsx";
 import Checkout from "./pages/CheckoutPage/Checkout.jsx";
 import PremiumListComponent from "./components/PremiumListCoponent/PremiumListCoponent.jsx";
 
+// Utility function to calculate total monthly cost
+const calculateTotalMonthlyCost = (shoppingCart, cost) => {
+  const sum = shoppingCart.reduce(
+    (acc, item) => acc + parseInt(item.monthly_cost, 10),
+    0
+  );
+  return sum + cost;
+};
+
 function App() {
   const themePacks = themePacksData;
 
@@ -29,32 +36,27 @@ function App() {
   const [token, setToken] = useState(0);
   const [totalMonthlyCost, setTotalMonthlyCost] = useState(0);
   const [premiumShoppingCart, setPremiumShoppingCart] = useState([]);
-  let cost = 80;
+  const cost = 80;
 
   useEffect(() => {
-    const sumMonthlyCost = () => {
-      let sum = 0;
-      shoppingCart.forEach(
-        (themePackObj) => (sum += parseInt(themePackObj.monthly_cost, 10))
-      );
-      return sum;
-    };
+    setTotalMonthlyCost(calculateTotalMonthlyCost(shoppingCart, cost));
+  }, [shoppingCart, cost]);
 
-    setTotalMonthlyCost(sumMonthlyCost() + cost);
-  }, [shoppingCart, token, cost]);
-
-  const allChannels = themePacksData.reduce((acc, pack) => {
-    return acc.concat(pack.channels);
-  }, []);
+  const allChannels = themePacksData.reduce(
+    (acc, pack) => acc.concat(pack.channels),
+    []
+  );
 
   const handleToggleChannel = (channel) => {
-    if (selectedChannels.some((selected) => selected.id === channel.id)) {
-      setSelectedChannels(
-        selectedChannels.filter((selected) => selected.id !== channel.id)
-      );
-    } else {
-      setSelectedChannels([...selectedChannels, channel]);
-    }
+    setSelectedChannels((prevSelectedChannels) => {
+      if (prevSelectedChannels.some((selected) => selected.id === channel.id)) {
+        return prevSelectedChannels.filter(
+          (selected) => selected.id !== channel.id
+        );
+      } else {
+        return [...prevSelectedChannels, channel];
+      }
+    });
   };
 
   return (
