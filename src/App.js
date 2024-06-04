@@ -31,7 +31,6 @@ function App() {
   const [premiumShoppingCart, setPremiumShoppingCart] = useState([]);
   let cost = 80;
 
-  // The sumMonthlyCost function is memoized with useCallback
   const sumMonthlyCost = useCallback(() => {
     let sum = 0;
     shoppingCart.forEach(
@@ -40,14 +39,8 @@ function App() {
     return sum;
   }, [shoppingCart]);
 
-  // Use the sumMonthlyCost function within the useEffect
   useEffect(() => {
-    // Effect callback to calculate and set the total monthly cost
-    const calculateTotalMonthlyCost = () => {
-      setTotalMonthlyCost(sumMonthlyCost() + cost);
-    };
-
-    calculateTotalMonthlyCost();
+    setTotalMonthlyCost(sumMonthlyCost() + cost);
   }, [shoppingCart, token, cost, sumMonthlyCost]);
 
   const allChannels = themePacksData.reduce((acc, pack) => {
